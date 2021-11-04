@@ -7,13 +7,6 @@ min_version = "0.9.0"
 # An optional live demo URL
 demo = ""
 
-# Any variable there can be overridden in the end user `config.toml`
-# You don't need to prefix variables by the theme name but as this will
-# be merged with user data, some kind of prefix or nesting is preferable
-# Use snake_casing to be consistent with the rest of Zola
-[extra]
-zt.enable_search = true
-
 # The theme author info: you!
 [author]
 name = "Thomas Chartron"
@@ -25,3 +18,25 @@ homepage = "https://tchartron.com"
 # author =  "mdo"
 # homepage = "https://markdotto.com/"
 # repo = "https://www.github.com/mdo/hyde"
+
+# Any variable there can be overridden in the end user `config.toml`
+# You don't need to prefix variables by the theme name but as this will
+# be merged with user data, some kind of prefix or nesting is preferable
+# Use snake_casing to be consistent with the rest of Zola
+[extra]
+zt.enable_search = true
+
+zt.navbar_items = [
+    { code = "en", nav_items = [
+        { url = "$URL/", name = "Home" },
+        { url = "$URL/categories", name = "Categories" },
+        { url = "$URL/tags", name = "Tags" },
+    ] },
+    { code = "fr", nav_items = [
+        { url = "$URL/", name = "Accueil" },
+        { url = "$URL/categories", name = "Categories" },
+        { url = "$URL/tags", name = "Tags" },
+    ] },
+]
+
+zt.navbar_title = "title"

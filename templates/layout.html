@@ -1,5 +1,5 @@
 <!doctype html>
-    <html>
+    <html lang="{{lang}}">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,10 +45,15 @@
           <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
         </div>
         <div class="hidden sm:block sm:ml-6">
-          <div class="flex space-x-4">
+          <div id="nav-links" class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
-
+            {% for item in config.extra.navbar_items %}
+            {% if lang == item.code %}
+            {% for nav in item.nav_items %}
+            <a href="{{ nav.url | replace(from='$URL', to=config.base_url) }}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">{{ nav.name }}</a>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
 
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
@@ -114,6 +119,8 @@
 
       {% block content %}
       {% endblock content %}
+
+      <script defer src="/js/main.js"></script>
       {% if config.extra.zt.enable_search %}
         <script defer src="/js/search.js"></script>
       {% endif %}
