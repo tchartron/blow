@@ -12,7 +12,8 @@
       </title>
   </head>
   <body>
-      <!-- ... -->
+      {% block content %}
+      {% endblock content %}
       {% if zt.enable_search %}
         <script defer src="/js/search.js"></script>
       {% endif %}
