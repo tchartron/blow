@@ -3,5 +3,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function search() {
-    console.log('search')
+
 }
