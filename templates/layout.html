@@ -47,7 +47,7 @@
         <div class="hidden sm:block sm:ml-6">
           <div id="nav-links" class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            {% for item in config.extra.navbar_items %}
+            {% for item in config.extra.zt.navbar_items %}
             {% if lang == item.code %}
             {% for nav in item.nav_items %}
             <a href="{{ nav.url | replace(from='$URL', to=config.base_url) }}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">{{ nav.name }}</a>
