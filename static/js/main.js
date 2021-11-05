@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('switch-theme').addEventListener('click', switchTheme());
 });
 
-function toggleTheme() {
+function switchTheme() {
   let current_theme = ([...document.documentElement.classList].includes('dark')) ? 'dark' : 'light';
   if (current_theme === 'dark') {
     localStorage.theme = 'light'
