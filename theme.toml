@@ -28,14 +28,14 @@ zt.enable_search = true
 
 zt.navbar_items = [
     { code = "en", nav_items = [
-        { url = "/", name = "Home" },
-        { url = "/categories", name = "Categories" },
-        { url = "/tags", name = "Tags" },
+        { url = "$URL/", name = "Home" },
+        { url = "$URL/categories", name = "Categories" },
+        { url = "$URL/tags", name = "Tags" },
     ] },
     { code = "fr", nav_items = [
-        { url = "/", name = "Accueil" },
-        { url = "/categories", name = "Categories" },
-        { url = "/tags", name = "Tags" },
+        { url = "$URL/", name = "Accueil" },
+        { url = "$URL/categories", name = "Categories" },
+        { url = "$URL/tags", name = "Tags" },
     ] },
 ]
 
