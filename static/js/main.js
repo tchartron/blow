@@ -22,10 +22,14 @@ function switchTheme() {
   console.log("called")
   let current_theme = ([...document.documentElement.classList].includes('dark')) ? 'dark' : 'light';
   if (current_theme === 'dark') {
-    localStorage.theme = 'light'
-    document.documentElement.classList.remove('dark')
+    localStorage.theme = 'light';
+    document.documentElement.classList.remove('dark');
+    document.getElementById('dark').add('hidden');
+    document.getElementById('light').remove('hidden');
   } else {
-    localStorage.theme = 'dark'
-    document.documentElement.classList.add('dark')
+    localStorage.theme = 'dark';
+    document.documentElement.classList.add('dark');
+    document.getElementById('light').remove('hidden');
+    document.getElementById('dark').add('hidden');
   }
 }
