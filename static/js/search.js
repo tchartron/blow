@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function openSearch() {
-  console.log("open modal")
+  console.log("open modal");
   let search_modal = document.getElementById('search-modal');
-  console.log(search_modal)
+  search_modal.classList.remove('hidden');
+  console.log(search_modal);
 }
 
 function search() {
