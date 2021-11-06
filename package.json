@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "NODE_ENV=development npx tailwindcss -i ./src/css/main.css -o ./static/css/main.css",
+    "prod": "NODE_ENV=production npx tailwindcss -i ./src/css/main.css -o ./static/css/main.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.9",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "tailwindcss": "^2.2.19"
+  }
+}
