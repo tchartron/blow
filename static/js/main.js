@@ -11,27 +11,26 @@ document.addEventListener("DOMContentLoaded", function() {
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
-    document.getElementById('light').classList.add('hidden');
+    document.getElementById('dark').classList.add('hidden');
   } else {
     document.documentElement.classList.remove('dark')
-    document.getElementById('dark').classList.add('hidden');
+    document.getElementById('light').classList.add('hidden');
   }
   // Switch theme action
   document.getElementById('switch-theme').addEventListener('click', switchTheme);
 });
 
 function switchTheme() {
-  console.log("called")
   let current_theme = ([...document.documentElement.classList].includes('dark')) ? 'dark' : 'light';
   if (current_theme === 'dark') {
     localStorage.theme = 'light';
     document.documentElement.classList.remove('dark');
-    document.getElementById('dark').classList.add('hidden');
-    document.getElementById('light').classList.remove('hidden');
+    document.getElementById('light').classList.add('hidden');
+    document.getElementById('dark').classList.remove('hidden');
   } else {
     localStorage.theme = 'dark';
     document.documentElement.classList.add('dark');
-    document.getElementById('light').classList.add('hidden');
-    document.getElementById('dark').classList.remove('hidden');
+    document.getElementById('dark').classList.add('hidden');
+    document.getElementById('light').classList.remove('hidden');
   }
 }
