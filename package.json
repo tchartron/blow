@@ -1,8 +1,30 @@
 {
+  "name": "zola-tailwind",
+  "version": "0.1.0",
+  "description": "A theme for Zola SSG built with tailwind css",
   "scripts": {
-    "dev": "NODE_ENV=development npx tailwindcss -i ./src/css/main.css -o ./static/css/main.css",
-    "prod": "NODE_ENV=production npx tailwindcss -i ./src/css/main.css -o ./static/css/main.css --minify"
+    "dev": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css --verbose ",
+    "watch": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css -w --verbose",
+    "prod": "NODE_ENV=production postcss ./src/css/main.css -o ./static/css/main.css --verbose"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tchartron/zola-tailwind.git"
+  },
+  "keywords": [
+    "zola",
+    "ssg",
+    "theme",
+    "tailwindcss",
+    "tailwind",
+    "tchartron"
+  ],
+  "author": "Thomas Chartron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tchartron/zola-tailwind/issues"
+  },
+  "homepage": "https://github.com/tchartron/zola-tailwind#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "cssnano": "^5.0.9",
