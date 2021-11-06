@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.documentElement.classList.remove('dark')
   }
   // Switch theme action
-  document.getElementById('switch-theme').addEventListener('click', switchTheme;
+  document.getElementById('switch-theme').addEventListener('click', switchTheme);
 });
 
 function switchTheme() {
