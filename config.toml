@@ -119,14 +119,14 @@ anchors = "on"
 # Whether to include the title of the page/section in the index
 include_title = true
 # Whether to include the description of the page/section in the index
-include_description = false
+include_description = true
 # Whether to include the path of the page/section in the index
-include_path = false
+include_path = true
 # Whether to include the rendered content of the page/section in the index
 include_content = true
 # At which character to truncate the content to. Useful if you have a lot of pages and the index would
 # become too big to load on the site. Defaults to not being set.
-# truncate_content_length = 100
+truncate_content_length = 100
 
 # Optional translation object for the default language
 # Example:

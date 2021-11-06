@@ -40,3 +40,8 @@ zt.navbar_items = [
 ]
 
 zt.navbar_title = "title"
+
+# Index page
+[extra.index]
+title = "Main title"
+image = "https://via.placeholder.com/200"

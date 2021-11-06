@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1 class="title">
-  This is my blog made with Zola.
-</h1>
-<p>Click <a href="/blog/">here</a> to see my posts.</p>
+<div class="flex justify-center">
+  <h1 class="text-xl text-bold">
+    {{ config.extra.index.title }}
+  </h1>
+  <img class="rounded-full h-16 w-16" src="{{ config.extra.index.image }}" alt="">
+  <p>Click <a href="/blog/">here</a> to see my posts.</p>
+</div>
 {% endblock content %}
