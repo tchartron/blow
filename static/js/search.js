@@ -57,11 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if ([...document.body.classList].includes('search-active') && search_input.value.trim().length > 3) {
       // console.log('search')
       search_term = search_input.value.trim();
-      console.log(search_term)
+      // console.log(search_term)
       search_results = search_index.search(search_term, elasticlunr_options);
       // console.log(search_results)
       if (Array.isArray(search_results) && search_results.length > 0) {
         let result_list = document.getElementById('results-list');
+        result_list.replaceChildren();
         let item = "";
         for (i = 0; i < search_results.length; i++) {
           let item = formatResultItem(search_results[i]);
@@ -91,7 +92,7 @@ function toggleSearchModal () {
 
 function formatResultItem(search_result) {
   console.log(search_result)
-  let formatted_result = `<li class="flex flex-col gap-y-2 hover:shadow-lg">
+  let formatted_result = `<li class="flex flex-col gap-y-2 hover:bg-white dark:hover:bg-gray-600 text-black dark:text-white">
   <span class="text-xl text-bold">${search_result.doc.title}</span>
   <span class="text-lg">${search_result.doc.description}</span>
   </li>`
