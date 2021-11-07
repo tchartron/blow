@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // }
 
   document.onkeydown = function(evt) {
-    evt.stopPropagation()
+    // evt.preventDefault()
     evt = evt || window.event
     let isEscape = false
     let isCmdK = false
@@ -47,6 +47,9 @@ function toggleModal () {
   modal.classList.toggle('opacity-0')
   modal.classList.toggle('pointer-events-none')
   body.classList.toggle('modal-active')
+  if ([...modal.classList].includes('modal-active')) {
+    document.getElementById('search-input').focus()
+  }
 }
 
 // function openSearch() {
