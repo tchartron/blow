@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let search_term = "";
   let search_results = "";
   let search_input = document.getElementById('search-input');
+  let search_results_container = document.getElementById('search-results');
   search_input.addEventListener('keyup', function(event) {
     // Trigger search
     if ([...document.body.classList].includes('search-active') && search_input.value.trim().length > 3) {
@@ -60,6 +61,12 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(search_term)
       search_results = search_index.search(search_term, elasticlunr_options);
       console.log(search_results)
+      if (Array.isArray(search_results) && search_results.length > 0) {
+        for (i = 0; i < search_results.length; i++) {
+          item.innerHTML = formatResultItem(search_results[i]);
+          search_results_container.appendChild(item);
+        }
+      }
       // if (results.length === 0) {
       //   $searchResults.style.display = "none";
       //   return;
@@ -79,6 +86,10 @@ function toggleSearchModal () {
       document.getElementById('search-input').focus()
     // }, 500);
   }
+}
+
+function formatResultItem() {
+
 }
 
 // function openSearch() {
