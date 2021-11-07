@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-
   let search_index = elasticlunr.Index.load(window.searchIndex);
   let elasticlunr_options = {
     bool: "AND",
@@ -63,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(search_results)
       if (Array.isArray(search_results) && search_results.length > 0) {
         for (i = 0; i < search_results.length; i++) {
-          item.innerHTML = formatResultItem(search_results[i]);
-          search_results_container.appendChild(item);
+          let item = formatResultItem(search_results[i]);
+          // search_results_container.appendChild(item);
         }
       }
       // if (results.length === 0) {
@@ -82,14 +81,14 @@ function toggleSearchModal () {
   document.body.classList.toggle('search-active')
   if ([...document.body.classList].includes('search-active')) {
     // window.setTimeout(function() {
-      document.getElementById('search-input').value = ""
-      document.getElementById('search-input').focus()
+    document.getElementById('search-input').value = ""
+    document.getElementById('search-input').focus()
     // }, 500);
   }
 }
 
-function formatResultItem() {
-
+function formatResultItem(search_result) {
+  console.log(search_result)
 }
 
 // function openSearch() {
