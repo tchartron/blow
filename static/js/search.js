@@ -23,17 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
     closemodal[i].addEventListener('click', toggleSearchModal)
   }
 
-  let search_index = elasticlunr.Index.load(window.searchIndex);
-  let elasticlunr_options = {
-    bool: "AND",
-    fields: {
-      title: {boost: 2},
-      body: {boost: 1},
-    }
-  };
-  let search_term = "";
-  let search_results = "";
-  let search_input = document.getElementById('search-input');
   document.onkeydown = function(evt) {
     evt = evt || window.event
     let isEscape = false
@@ -49,6 +38,21 @@ document.addEventListener("DOMContentLoaded", function() {
     if ((isEscape && document.body.classList.contains('search-active')) || isCmdK) {
       toggleSearchModal();
     }
+  };
+
+
+  let search_index = elasticlunr.Index.load(window.searchIndex);
+  let elasticlunr_options = {
+    bool: "AND",
+    fields: {
+      title: {boost: 2},
+      body: {boost: 1},
+    }
+  };
+  let search_term = "";
+  let search_results = "";
+  let search_input = document.getElementById('search-input');
+  search_input.addEventListener('keyup', function(event) {
     // Trigger search
     if ([...document.body.classList].includes('search-active') && search_input.value.trim().length > 3) {
       console.log('search')
@@ -61,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //   return;
       // }
     }
-  };
+  })
 });
 
 function toggleSearchModal () {
