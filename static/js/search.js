@@ -95,8 +95,15 @@ function formatResultItem(search_result) {
   <span class="text-xl text-bold">${search_result.doc.title}</span>
   <span class="text-lg">${search_result.doc.description}</span>
   </li>`
-  console.log(formatted_result)
-  return formatted_result
+  return htmlToElement(formatted_result)
+}
+
+// Credits : https://stackoverflow.com/a/35385518/7098666
+function htmlToElement(html) {
+    let template = document.createElement('template');
+    html = html.trim();
+    template.innerHTML = html;
+    return template.content.firstChild;
 }
 
 // function openSearch() {
