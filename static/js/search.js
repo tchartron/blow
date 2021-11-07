@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // }
 
   document.onkeydown = function(evt) {
-    evt.preventDefault()
     evt = evt || window.event
     let isEscape = false
     let isCmdK = false
@@ -35,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
       isCmdK = (evt.keyCode === 75 && evt.metaKey)
       isEscape = (evt.keyCode === 27)
     }
+    if (isCmdK) { evt.preventDefault() }
     if ((isEscape && document.body.classList.contains('modal-active')) || isCmdK) {
       toggleModal();
     }
