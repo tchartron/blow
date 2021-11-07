@@ -5,24 +5,35 @@ document.addEventListener("DOMContentLoaded", function() {
   // for (var i = 0; i < openmodal.length; i++) {
   //   openmodal[i].addEventListener('click', function(event){
   //     event.preventDefault()
-  //     toggleModal()
+  //     toggleSearchModal()
   //   })
   // }
-  let search_input = document.getElementById('search');
-  search_input.addEventListener('click', function(event){
+  let nav_search_input = document.getElementById('search');
+  nav_search_input.addEventListener('click', function(event){
     event.preventDefault()
-    toggleModal()
+    toggleSearchModal()
   })
 
   const overlay = document.querySelector('.modal-overlay')
-  overlay.addEventListener('click', toggleModal)
+  overlay.addEventListener('click', toggleSearchModal)
 
   let closemodal = document.getElementById('close-modal')
-  closemodal.addEventListener('click', toggleModal)
+  closemodal.addEventListener('click', toggleSearchModal)
   // for (var i = 0; i < closemodal.length; i++) {
-  //   closemodal[i].addEventListener('click', toggleModal)
+  //   closemodal[i].addEventListener('click', toggleSearchModal)
   // }
 
+  let search_index = elasticlunr.Index.load(window.searchIndex);
+  let elasticlunr_options = {
+    bool: "AND",
+    fields: {
+      title: {boost: 2},
+      body: {boost: 1},
+    }
+  };
+   let search_term = "";
+   let search_results = "";
+   let search_input = document.getElementById('search-input');
   document.onkeydown = function(evt) {
     evt = evt || window.event
     let isEscape = false
@@ -35,19 +46,31 @@ document.addEventListener("DOMContentLoaded", function() {
       isEscape = (evt.keyCode === 27)
     }
     if (isCmdK) { evt.preventDefault() }
-    if ((isEscape && document.body.classList.contains('modal-active')) || isCmdK) {
-      toggleModal();
+    if ((isEscape && document.body.classList.contains('search-active')) || isCmdK) {
+      toggleSearchModal();
+    }
+    // Trigger search
+    if ([...body.classList].includes('search-active') && search_term.length > 3) {
+      console.log('search')
+      search_term = search_input.value.trim();
+      console.log(search_term)
+      search_results = index.search(term, options);
+      console.log(search_results)
+      // if (results.length === 0) {
+      //   $searchResults.style.display = "none";
+      //   return;
+      // }
     }
   };
 });
 
-function toggleModal () {
+function toggleSearchModal () {
   const body = document.querySelector('body')
   const modal = document.getElementById('search-modal')
   modal.classList.toggle('opacity-0')
   modal.classList.toggle('pointer-events-none')
-  body.classList.toggle('modal-active')
-  if ([...body.classList].includes('modal-active')) {
+  body.classList.toggle('search-active')
+  if ([...body.classList].includes('search-active')) {
     // window.setTimeout(function() {
       document.getElementById('search-input').value = ""
       document.getElementById('search-input').focus()
