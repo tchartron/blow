@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(evt)
     if ("key" in evt) {
       isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      isCmdK = (evt.key === "k" && evt.key === "Meta")
     } else {
-      isCmdK = (evt.keyCode === 75 && evt.metaKey)
+      isCmdK = (evt.keyCode === 75 && evt.metaKey || evt.keyCode === 75 && evt.keyCode === 224)
       isEscape = (evt.keyCode === 27)
     }
     console.log(isCmdK)
