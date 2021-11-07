@@ -49,6 +49,7 @@ function toggleModal () {
   body.classList.toggle('modal-active')
   if ([...body.classList].includes('modal-active')) {
     window.setTimeout(function() {
+      document.getElementById('search-input').value('')
       document.getElementById('search-input').focus()
     }, 500);
   }
