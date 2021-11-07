@@ -50,7 +50,7 @@ function toggleModal () {
   if ([...body.classList].includes('modal-active')) {
     window.setTimeout(function() {
       document.getElementById('search-input').focus()
-    }, 0);
+    }, 500);
   }
 }
 
