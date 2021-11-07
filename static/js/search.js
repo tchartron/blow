@@ -35,16 +35,14 @@ document.addEventListener("DOMContentLoaded", function() {
       isCmdK = (evt.keyCode === 75 && evt.metaKey)
       isEscape = (evt.keyCode === 27)
     }
-    console.log(isCmdK)
     if ((isEscape && document.body.classList.contains('modal-active')) || isCmdK) {
-      toggleModal()
+      toggleModal();
     }
   };
 });
 
 function toggleModal () {
   const body = document.querySelector('body')
-  // const modal = document.querySelector('.modal')
   const modal = document.getElementById('search-modal')
   modal.classList.toggle('opacity-0')
   modal.classList.toggle('pointer-events-none')

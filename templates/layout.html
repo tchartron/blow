@@ -68,6 +68,7 @@
           </div>
 
           <!---------------------------- Search box modal ---------------------------->
+          <!-- Greatly inspired by https://www.tailwindtoolbox.com/components/modal -->
           <div id="search-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-10">
             <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
@@ -93,11 +94,9 @@
                 </div>
 
                 <!-- Modal Body -->
-                <p>Modal content can go here</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
+                <input id="search-input" class="rounded-xl border border-black h-9" type="text">
+                <!-- Search results -->
+                <div class="hidden flex flex-col gap-y-4 border border-black max-h-2xl">
 
                 <!--Footer-->
                 <!-- <div class="flex justify-end pt-2">
@@ -106,14 +105,6 @@
                 </div> -->
 
               </div>
-            </div>
-          </div>
-          <div  class="hidden w-auto h-auto flex flex-col fixed bg-white z-10 p-10 top-1/4">
-            <!-- Search input -->
-            <input id="search-input" class="rounded-xl border border-black h-9" type="text">
-            <!-- Search results -->
-            <div class="hidden flex flex-col gap-y-4 border border-black max-h-2xl">
-
             </div>
           </div>
           {% endif %}
