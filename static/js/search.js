@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // }
 
   document.onkeydown = function(evt) {
-    evt.preventDefault()
+    evt.stopPropagation()
     evt = evt || window.event
     let isEscape = false
     let isCmdK = false
