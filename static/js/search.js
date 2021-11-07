@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const overlay = document.querySelector('.modal-overlay')
   overlay.addEventListener('click', toggleSearchModal)
 
-  let closemodal = document.querySelector('.modal-close')
+  let closemodal = document.querySelectorAll('.modal-close')
   // closemodal.addEventListener('click', toggleSearchModal)
   for (var i = 0; i < closemodal.length; i++) {
     closemodal[i].addEventListener('click', toggleSearchModal)
