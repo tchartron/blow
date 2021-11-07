@@ -92,9 +92,11 @@ function toggleSearchModal () {
 
 function formatResultItem(search_result) {
   console.log(search_result)
-  let formatted_result = `<li class="flex flex-col gap-y-2 hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-gray-200 p-2">
+  let formatted_result = `<li class="flex flex-col gap-y-2 hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-gray-200 p-2 rounded-lg">
+  <a href="${search_result.doc.path}">
   <span class="text-xl text-bold">${search_result.doc.title}</span>
   <span class="text-lg">${search_result.doc.description}</span>
+  </a>
   </li>`
   return htmlToElement(formatted_result)
 }
