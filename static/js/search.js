@@ -61,9 +61,11 @@ document.addEventListener("DOMContentLoaded", function() {
       search_results = search_index.search(search_term, elasticlunr_options);
       console.log(search_results)
       if (Array.isArray(search_results) && search_results.length > 0) {
+        let result_list = document.getElementById('results-list');
+        let item = "";
         for (i = 0; i < search_results.length; i++) {
           let item = formatResultItem(search_results[i]);
-          // search_results_container.appendChild(item);
+          result_list.appendChild(item);
         }
       }
       // if (results.length === 0) {
@@ -89,6 +91,10 @@ function toggleSearchModal () {
 
 function formatResultItem(search_result) {
   console.log(search_result)
+  let formatted_result = `<li class="flex flex-col gap-y-2 hover:shadow-lg">
+  <span class="text-xl text-bold">${search_result.doc.title}</span>
+  <span class="text-lg">${search_result.doc.description}</span>
+  </li>`
 }
 
 // function openSearch() {
