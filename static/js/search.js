@@ -18,14 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
   overlay.addEventListener('click', toggleModal)
 
   let closemodal = document.getElementById('close-modal')
-  for (var i = 0; i < closemodal.length; i++) {
-    closemodal[i].addEventListener('click', toggleModal)
-  }
+  closemodal.addEventListener('click', toggleModal)
+  // for (var i = 0; i < closemodal.length; i++) {
+  //   closemodal[i].addEventListener('click', toggleModal)
+  // }
 
   document.onkeydown = function(evt) {
     evt = evt || window.event
     let isEscape = false
     let isCmdK = false
+    console.log(evt)
     if ("key" in evt) {
       isEscape = (evt.key === "Escape" || evt.key === "Esc")
     } else {
