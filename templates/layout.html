@@ -214,7 +214,8 @@
   <!------------------------- SCRIPTS ------------------------->
   <script defer src="/js/main.js"></script>
   {% if config.extra.zt.enable_search %}
-    <script defer src="/elasticlunr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+    <script src="/search_index.{{lang}}.js"></script>
     <script defer src="/js/search.js"></script>
   {% endif %}
   </body>
