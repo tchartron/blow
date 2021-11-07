@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
   let selected_navbar_link = [...navbar_links].find((item) => {
     return (item.href === current_location)
   })
-  selected_navbar_link.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+  if (typeof selected_navbar_link !== 'undefined') {
+    selected_navbar_link.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+  }
 
   // ---------------- Switch Theme -------------------------
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
