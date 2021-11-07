@@ -31,9 +31,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if ("key" in evt) {
       isEscape = (evt.key === "Escape" || evt.key === "Esc")
       isCmdK = (evt.key === "k" && evt.key === "Meta")
+      console.log("first")
     } else {
       isCmdK = (evt.keyCode === 75 && evt.metaKey || evt.keyCode === 75 && evt.keyCode === 224)
       isEscape = (evt.keyCode === 27)
+      console.log("second")
     }
     console.log(isCmdK)
     if ((isEscape && document.body.classList.contains('modal-active')) || isCmdK) {
