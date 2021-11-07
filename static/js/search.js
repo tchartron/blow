@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
       body: {boost: 1},
     }
   };
-   let search_term = "";
-   let search_results = "";
-   let search_input = document.getElementById('search-input');
+  let search_term = "";
+  let search_results = "";
+  let search_input = document.getElementById('search-input');
   document.onkeydown = function(evt) {
     evt = evt || window.event
     let isEscape = false
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log('search')
       search_term = search_input.value.trim();
       console.log(search_term)
-      search_results = index.search(term, options);
+      search_results = search_index.search(search_term, elasticlunr_options);
       console.log(search_results)
       // if (results.length === 0) {
       //   $searchResults.style.display = "none";
