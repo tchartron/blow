@@ -48,10 +48,10 @@ function toggleModal () {
   modal.classList.toggle('pointer-events-none')
   body.classList.toggle('modal-active')
   if ([...body.classList].includes('modal-active')) {
-    window.setTimeout(function() {
+    // window.setTimeout(function() {
       document.getElementById('search-input').value = ""
       document.getElementById('search-input').focus()
-    }, 500);
+    // }, 500);
   }
 }
 
