@@ -17,20 +17,23 @@ document.addEventListener("DOMContentLoaded", function() {
   const overlay = document.querySelector('.modal-overlay')
   overlay.addEventListener('click', toggleModal)
 
-  var closemodal = document.querySelectorAll('.modal-close')
+  let closemodal = document.getElementById('close-modal')
   for (var i = 0; i < closemodal.length; i++) {
     closemodal[i].addEventListener('click', toggleModal)
   }
 
   document.onkeydown = function(evt) {
     evt = evt || window.event
-    var isEscape = false
+    let isEscape = false
+    let isCmdK = false
     if ("key" in evt) {
       isEscape = (evt.key === "Escape" || evt.key === "Esc")
     } else {
+      isCmdK = (evt.keyCode === 75 && evt.metaKey)
       isEscape = (evt.keyCode === 27)
     }
-    if (isEscape && document.body.classList.contains('modal-active')) {
+    console.log(isCmdK)
+    if ((isEscape && document.body.classList.contains('modal-active')) || isCmdK) {
       toggleModal()
     }
   };
