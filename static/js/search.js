@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
       toggleSearchModal();
     }
     // Trigger search
-    if ([...body.classList].includes('search-active') && search_term.length > 3) {
+    if ([...document.body.classList].includes('search-active') && search_term.length > 3) {
       console.log('search')
       search_term = search_input.value.trim();
       console.log(search_term)
@@ -65,12 +65,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function toggleSearchModal () {
-  const body = document.querySelector('body')
   const modal = document.getElementById('search-modal')
   modal.classList.toggle('opacity-0')
   modal.classList.toggle('pointer-events-none')
-  body.classList.toggle('search-active')
-  if ([...body.classList].includes('search-active')) {
+  document.body.classList.toggle('search-active')
+  if ([...document.body.classList].includes('search-active')) {
     // window.setTimeout(function() {
       document.getElementById('search-input').value = ""
       document.getElementById('search-input').focus()
@@ -85,6 +84,6 @@ function toggleSearchModal () {
 //   console.log(search_modal);
 // }
 
-function search() {
-  let index = elasticlunr.Index.load(window.searchIndex);
-}
+// function search() {
+//   let index = elasticlunr.Index.load(window.searchIndex);
+// }
