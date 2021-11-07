@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
       toggleSearchModal();
     }
     // Trigger search
-    if ([...document.body.classList].includes('search-active') && search_term.length > 3) {
+    if ([...document.body.classList].includes('search-active') && search_input.value.trim().length > 3) {
       console.log('search')
       search_term = search_input.value.trim();
       console.log(search_term)
