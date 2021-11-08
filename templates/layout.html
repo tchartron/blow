@@ -11,7 +11,7 @@
         {% endblock title %}
       </title>
   </head>
-  <body class="dark:bg-gray-700">
+  <body class="dark:bg-gray-700 min-h-screen flex flex-col h-screen justify-between">
   <!---------------------------------------------------------->
   <!------------------------- NAVBAR ------------------------->
   <!---------------------------------------------------------->
@@ -170,7 +170,7 @@
   <!----------------------------------------------------------->
   <!------------------------- CONTENT ------------------------->
   <!----------------------------------------------------------->
-  <main class="max-w-7xl mx-auto text-black dark:text-white">
+  <main class="max-w-7xl mx-auto text-black dark:text-white w-full">
     {% block content %}
     {% endblock content %}
   </main>
@@ -178,7 +178,7 @@
   <!---------------------------------------------------------->
   <!------------------------- FOOTER ------------------------->
   <!---------------------------------------------------------->
-  <footer class="max-w-7xl mx-auto relative pt-1 border-b-2 border-gray-300 dark:border-gray-200">
+  <footer class="max-w-7xl mx-auto relative pt-1 border-b-2 border-gray-300 dark:border-gray-200 w-full">
     <!-- <div class="container mx-auto px-6">
       <div class="sm:flex sm:mt-8">
         <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
