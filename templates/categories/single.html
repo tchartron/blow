@@ -5,7 +5,7 @@
   <h1 class="text-2xl text-bold">
     {{ term.name }}
   </h1>
-  <div class="flex flex-col gap-y-6 transform transition duration-500 hover:scale-50 bg-gray-200 dark:bg-gray-800">
+  <div class="flex flex-col gap-y-6">
     {% if paginator %}
     {% set pages = paginator.pages %}
     {% else %}
@@ -13,7 +13,7 @@
     {% endif %}
 
     {% for page in pages %}
-      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl">
+      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl transform transition duration-500 hover:scale-110 bg-gray-200 dark:bg-gray-800">
         <div class="">
           <h2 class="text-2xl text-bold"><a href='{{ page.permalink }}'>{{ page.title }}</a></h2>
           <p class="text-bold">{{ page.description }}</p>
