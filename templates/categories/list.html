@@ -1,7 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1 class="title">
-  Categories
-</h1>
+<div class="flex items-center flex-col md:mt-40">
+  <h1 class="text-xl text-bold">
+    Categories
+  </h1>
+  <p class="text-bold">{{ terms | length }} categories in total</p>
+
+  {% for category in terms %}
+  <a href="{{ get_taxonomy_url(kind='categories', name=category.name) }}" class="mr-4">
+    <span class="icon">
+      <i class="fas fa-cube"></i>
+    </span>
+    <span>{{category.name}} <sup>{{ category.pages | length }}</sup></span>
+  </a>
+  {% endfor %}
 {% endblock content %}
