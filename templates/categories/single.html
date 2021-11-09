@@ -28,14 +28,14 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="ml-2">{{ page.reading_time }} min</span>
+                <span class="ml-1">{{ page.reading_time }} min</span>
               </span>
               <span class="flex">
                 <!-- Icon pencil -->
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
                 </svg>
-                <span class="ml-2">{{ page.word_count }} words</span>
+                <span class="ml-1">{{ page.word_count }} words</span>
               </span>
             </div>
           </div>
@@ -45,17 +45,17 @@
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
-              <span class="ml-2"><time datetime="{{ page.date }}">Published on {{ page.date | date(format='%B %d, %Y') }}</time></span>
+              <span class="ml-1"><time datetime="{{ page.date }}">Published on {{ page.date | date(format='%B %d, %Y') }}</time></span>
             </span>
             <span class="flex items-center">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
               {% if extra.author.name and extra.author.name %}
-                <span class="ml-2">{{ extra.author.name }}</span>
+                <span class="ml-1">{{ extra.author.name }}</span>
                 <img class="rounded-full h-9 w-9" src="{{ extra.author.avatar }}">
               {% else %}
-                <span class="ml-2">{{ config.extra.default_author.name }}</span>
+                <span class="ml-1">{{ config.extra.default_author.name }}</span>
                 <img class="rounded-full h-9 w-9" src="{{ config.extra.default_author.avatar }}">
               {% endif %}
             </span>
@@ -67,7 +67,7 @@
           {{ page.summary | safe }}
           <a class="flex py-2" href='{{ page.permalink }}'>
             Read More
-            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-6 h-6 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </a>
