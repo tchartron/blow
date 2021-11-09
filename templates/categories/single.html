@@ -56,7 +56,7 @@
                   <span class="ml-2">{{ extra.author.name }}</span>
                   <img class="rounded-full h-9 w-9" src="{{ extra.author.avatar }}">
                 {% else %}
-                  <span class="ml-2">{{ config.extra.default_author.name }} published on</span>
+                  <span class="ml-2">{{ config.extra.default_author.name }}</span>
                   <img class="rounded-full h-9 w-9" src="{{ config.extra.default_author.avatar }}">
                 {% endif %}
               </span>
@@ -67,7 +67,7 @@
         <!-- Summary -->
         <div class="text-bold mt-2">
           {{ page.summary | safe }}
-          <a href='{{ page.permalink }}'>
+          <a class="flex" href='{{ page.permalink }}'>
             Read More
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
