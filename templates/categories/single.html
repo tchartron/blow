@@ -5,7 +5,7 @@
   <h1 class="text-2xl text-bold">
     {{ term.name }}
   </h1>
-  <div class="flex flex-col gap-y-6">
+  <div class="flex flex-col gap-y-6 transform transition duration-500 hover:scale-110">
     {% if paginator %}
     {% set pages = paginator.pages %}
     {% else %}
