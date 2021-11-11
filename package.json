@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css --verbose ",
     "watch": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css -w --verbose",
-    "prod": "NODE_ENV=production postcss ./src/css/main.css -o ./static/css/main.css --verbose"
+    "uglify": "uglifyjs ./src/js/main.js --compress --mangle -o ./static/js/main.js && uglifyjs ./src/js/search.js --compress --mangle -o ./static/js/search.js",
+    "prod": "NODE_ENV=production npm run uglify && postcss ./src/css/main.css -o ./static/css/main.css --verbose"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "cssnano": "^5.0.9",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^2.2.19",
+    "uglify-js": "^3.14.3"
   }
 }
