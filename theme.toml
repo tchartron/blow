@@ -28,20 +28,20 @@ zt.enable_search = true
 zt.enable_adsense = true
 zt.adsense_link = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=myclientid"
 
-zt.navbar_items = [
-    { code = "en", nav_items = [
-        { url = "$URL/", name = "Home" },
-        { url = "$URL/categories", name = "Categories" },
-        { url = "$URL/tags", name = "Tags" },
+[extra.navbar]
+items = [
+    { code = "en", links = [
+        { url = "/", name = "Home" },
+        { url = "/categories", name = "Categories" },
+        { url = "/tags", name = "Tags" },
     ] },
-    { code = "fr", nav_items = [
-        { url = "$URL/", name = "Accueil" },
-        { url = "$URL/categories", name = "Categories" },
-        { url = "$URL/tags", name = "Tags" },
+    { code = "fr", links = [
+        { url = "/", name = "Accueil" },
+        { url = "/categories", name = "Categories" },
+        { url = "/tags", name = "Tags" },
     ] },
 ]
-
-zt.navbar_title = "title"
+title = "title"
 
 # Index page
 [extra.index]
