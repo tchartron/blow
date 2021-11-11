@@ -196,8 +196,8 @@
         </a>
         <ul class="flex gap-y-2">
           {% for pager in range(start=1, end=paginator.number_pagers+1) %}
-          <li class="p-4 border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-700 text-black dark:hover:bg-gray-600 dark:hover:text-white rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800">
-            <a class="{% if paginator.current_index == pager %}bg-blue-500{% endif %}" href='{{ paginator.base_url }}{{pager}}' aria-label="Page {{pager}}">
+          <li class="border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-700 text-black dark:hover:bg-gray-600 dark:hover:text-white rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800">
+            <a class="p-4 {% if paginator.current_index == pager %}bg-blue-500{% endif %}" href='{{ paginator.base_url }}{{pager}}' aria-label="Page {{pager}}">
               {{pager}}
             </a>
           </li>
