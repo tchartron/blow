@@ -225,6 +225,10 @@
     <script src="/search_index.{{lang}}.js"></script>
     <script defer src="/js/search.js"></script>
   {% endif %}
+  {% if config.extra.zt.enable_adsense %}
+    <script async src="{{config.extra.zt.adsense_link}}"
+     crossorigin="anonymous"></script>
+  {% endif %}
   {% block extra_js %}
   {% endblock extra_js %}
   </body>

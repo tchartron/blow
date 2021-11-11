@@ -25,6 +25,8 @@ homepage = "https://tchartron.com"
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 zt.enable_search = true
+zt.enable_adsense = true
+zt.adsense_link = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=myclientid"
 
 zt.navbar_items = [
     { code = "en", nav_items = [
