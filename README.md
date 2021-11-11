@@ -8,6 +8,6 @@ zola-tailwind is a [Zola](https://www.getzola.org/) theme built with tailwindcss
 - [X] Uglifyjs build process with minification
 - [X] Example script to deploy to Github Pages
 - [X] Search functionality with Command + K shortcut
-- [ ] Adsense ads functionality
+- [ ] Adsense ads 
 - [ ] Social links (github, gitlab, twitter, linkedin, email) 
 - [ ] Multilingue 
