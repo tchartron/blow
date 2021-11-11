@@ -65,7 +65,7 @@
       </span>
       {% else %}
       <!-- Active -->
-        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-700 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800"  href="{{ paginator.previous }}" {% if not paginator.previous %}disabled{% endif %}>
+        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800"  href="{{ paginator.previous }}" {% if not paginator.previous %}disabled{% endif %}>
           <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
           </svg>
@@ -75,7 +75,7 @@
       <ul class="flex gap-x-2">
         {% for pager in range(start=1, end=paginator.number_pagers+1) %}
         <li class="">
-          <a class="p-4 border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 hover:bg-gray-700 dark:hover:bg-gray-600 hover:text-white rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 {% if paginator.current_index == pager %}bg-blue-500{% else %}bg-gray-200 dark:bg-gray-800{% endif %}" href="{{ paginator.base_url }}{{pager}}" aria-label="Page {{pager}}">
+          <a class="p-4 border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-white rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 {% if paginator.current_index == pager %}bg-blue-500{% else %}bg-gray-200 dark:bg-gray-800{% endif %}" href="{{ paginator.base_url }}{{pager}}" aria-label="Page {{pager}}">
             {{pager}}
           </a>
         </li>
@@ -91,7 +91,7 @@
         </span>
       {% else %}
       <!-- Active -->
-        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-700 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800" href="{{ paginator.next }}">
+        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800" href="{{ paginator.next }}">
           Next page
           <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
