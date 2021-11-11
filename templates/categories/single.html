@@ -53,10 +53,10 @@
               </svg>
               {% if extra.author.name and extra.author.name %}
                 <span class="ml-1">{{ extra.author.name }}</span>
-                <img class="rounded-full h-9 w-9" src="{{ extra.author.avatar }}">
+                <img class="rounded-full h-9 w-9 ml-1" src="{{ extra.author.avatar }}">
               {% else %}
                 <span class="ml-1">{{ config.extra.default_author.name }}</span>
-                <img class="rounded-full h-9 w-9" src="{{ config.extra.default_author.avatar }}">
+                <img class="rounded-full h-9 w-9 ml-1" src="{{ config.extra.default_author.avatar }}">
               {% endif %}
             </span>
           </div>
