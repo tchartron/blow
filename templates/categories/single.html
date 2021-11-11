@@ -118,7 +118,7 @@
 {% if paginator.previous or paginator.next %}
   <div class="max-w-7xl px-2 sm:px-6 lg:px-8 mx-auto w-full">
     <div class="flex items-center justify-between">
-      {% if not paginator.next %}
+      {% if not paginator.previous %}
         <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
         </svg>
