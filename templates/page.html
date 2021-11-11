@@ -104,7 +104,7 @@
 
 {% block pagination %}
 {% if page.earlier or page.later or page.lighter or page.heavier %}
-  <div class="max-w-7xl px-2 sm:px-6 lg:px-8 mx-auto w-full">
+  <div class="max-w-7xl px-2 sm:px-6 lg:px-8 mx-auto">
     <div class="flex items-center space-x-56 mt-4">
       {% if page.later %}
         <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-700 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800" href="{{ page.later.permalink }}">
