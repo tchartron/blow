@@ -52,8 +52,7 @@
               {% for item in config.extra.navbar.items %}
               {% if lang == item.code %}
               {% for link in item.links %}
-              <!-- <a href="{{ nav.url | replace(from='$URL', to=config.base_url) }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ nav.name }}</a> -->
-              <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+                <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
               {% endfor %}
               {% endif %}
               {% endfor %}
