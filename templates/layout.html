@@ -186,28 +186,30 @@
   <!----------------------------------------------------------->
   {% block pagination %}
   {% if paginator.previous or paginator.next %}
-    <div class="flex justify-between">
-      <a class="border border-black rounded-lg" href='{{ paginator.previous }}' {% if not paginator.previous %}disabled{% endif %}>
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
-        </svg>
-        Previous
-      </a>
-      <ul class="flex gap-y-2">
-        {% for pager in range(start=1, end=paginator.number_pagers+1) %}
-        <li>
-          <a class="{% if paginator.current_index == pager %}bg-blue-500{% endif %}" href='{{ paginator.base_url }}{{pager}}' aria-label="Page {{pager}}">
-            {{pager}}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      <a class="border border-black rounded-lg" href='{{ paginator.next }}' {% if not paginator.next %}disabled{% endif %}>
-        Next page
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
+    <div class="max-w-7xl px-2 sm:px-6 lg:px-8 flex justify-between">
+      <div class="flex justify-between">
+        <a class="border border-black rounded-lg" href='{{ paginator.previous }}' {% if not paginator.previous %}disabled{% endif %}>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+          </svg>
+          Previous
+        </a>
+        <ul class="flex gap-y-2">
+          {% for pager in range(start=1, end=paginator.number_pagers+1) %}
+          <li>
+            <a class="{% if paginator.current_index == pager %}bg-blue-500{% endif %}" href='{{ paginator.base_url }}{{pager}}' aria-label="Page {{pager}}">
+              {{pager}}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        <a class="border border-black rounded-lg" href='{{ paginator.next }}' {% if not paginator.next %}disabled{% endif %}>
+          Next page
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   {% endif %}
   {% endblock%}
