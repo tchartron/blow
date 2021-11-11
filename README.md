@@ -10,7 +10,7 @@ zola-tailwind is a [Zola](https://www.getzola.org/) theme built with tailwindcss
 - [X] Postcss build process with minification (and tailwindcss tree shaking to reduce bundle size)
 - [X] Uglifyjs build process with minification
 - [X] Example script to deploy to Github Pages
-- [ ] Pagination
+- [X] Pagination
 - [ ] Sliding menu with sections
 - [ ] Table of content
 - [ ] Mobile responsive
