@@ -62,6 +62,7 @@
               </svg>
             </div>
           </div>
+
           {% if config.extra.zt.enable_search %}
           <!-- Search input in navbar -->
           <div class="flex ml-auto relative items-center">
@@ -78,7 +79,7 @@
           </div>
 
           <!---------------------------- Search box modal ---------------------------->
-          <!-- Greatly inspired by https://www.tailwindtoolbox.com/components/modal -->
+          <!-- inspired by https://www.tailwindtoolbox.com/components/modal -->
           <div id="search-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex z-10">
             <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
@@ -118,6 +119,19 @@
             </div>
           </div>
         </div>
+        {% endif %}
+
+        <!---------------------------- Left side menu ---------------------------->
+        {% if config.extra.zt.enable_sidebar %}
+          <div class="flex w-1/5">
+            {% for item in config.extra.sidebar/items %}
+              {% if lang == item.code %}
+                {% for link in item.links %}
+                  <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
         {% endif %}
 
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
