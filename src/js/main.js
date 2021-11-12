@@ -44,7 +44,11 @@ function toggleSidebar() {
   let sidebar = document.getElementById('sidebar');
   if ([...sidebar.classList].includes('translate-x-0')) {
     console.log('visible')
+    sidebar.classList.remove('translate-x-0')
+    sidebar.classList.add('-translate-x-full')
   } else {
     console.log('not visible')
+    sidebar.classList.remove('-translate-x-full')
+    sidebar.classList.add('translate-x-0')
   }
 }
