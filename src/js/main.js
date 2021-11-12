@@ -42,12 +42,13 @@ function switchTheme() {
 
 function toggleSidebar() {
   let sidebar = document.getElementById('sidebar');
+  sidebar.classList.remove('hidden')
   if ([...sidebar.classList].includes('translate-x-0')) {
-    console.log('visible')
+    document.body.style.setProperty("overflow", "hidden")
     sidebar.classList.remove('translate-x-0')
     sidebar.classList.add('-translate-x-full')
   } else {
-    console.log('not visible')
+    document.body.style.removeProperty("overflow")
     sidebar.classList.remove('-translate-x-full')
     sidebar.classList.add('translate-x-0')
   }
