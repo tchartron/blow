@@ -57,7 +57,7 @@
                 {% endif %}
               {% endfor %}
               <!-- More ... Button (sidebar) -->
-              <button id="toggle-sidebar" class="hidden">
+              <button id="toggle-sidebar">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
                 </svg>
@@ -123,9 +123,9 @@
         </div>
         {% endif %}
 
-        <!---------------------------- Left side menu ---------------------------->
+        <!---------------------------- Sidebar Menu ---------------------------->
         {% if config.extra.zt.enable_sidebar %}
-          <div id="sidebar" class="flex flex-col pt-6 p-2 text-2xl text-black dark:text-gray-200 bg-gray-200 dark:bg-gray-900 transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 shadow-2xl">
+          <div id="sidebar" class="hidden flex flex-col pt-6 p-2 text-2xl text-black dark:text-gray-200 bg-gray-200 dark:bg-gray-900 transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 shadow-2xl">
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.code %}
                 {% for link in item.links %}
