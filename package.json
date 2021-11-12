@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css --verbose ",
     "watch": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css -w --verbose",
-    "uglify": "uglifyjs ./src/js/main.js --compress --mangle -o ./static/js/main.js && uglifyjs ./src/js/search.js --compress --mangle -o ./static/js/search.js",
+    "uglify": "uglifyjs ./src/js/main.js --compress --mangle -o ./static/js/main.js && uglifyjs ./src/js/page.js --compress --mangle -o ./static/js/page.js && uglifyjs ./src/js/search.js --compress --mangle -o ./static/js/search.js",
     "prod": "NODE_ENV=production npm run uglify && postcss ./src/css/main.css -o ./static/css/main.css --verbose"
   },
   "repository": {

@@ -12,41 +12,48 @@
     {% set pages = section.pages %}
     {% endif %}
 
-    <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800">
-      <div class="flex flex-col py-2 justify-center">
-       <!-- <h2 class="text-2xl text-bold"><a href='{{ section.permalink }}'>{{ section.title }}</a></h2> -->
-        <p class="text-bold">{{ section.description }}</p>
-      </div>
+    {% for page in pages %}
+      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800">
+        <div class="flex flex-col py-2 justify-center">
+         <!-- <h2 class="text-2xl text-bold"><a href='{{ page.permalink }}'>{{ page.title }}</a></h2> -->
+          <p class="text-bold">{{ page.description }}</p>
+        </div>
 
-      <!-- Read time and word count -->
-      <div class="flex flex-wrap py-2">
-        <div class="flex items-center w-1/3">
-          <div class="flex space-x-3 text-gray-900 dark:text-gray-400">
-            <span class="flex">
-              <!-- Icon clock -->
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span class="ml-1">{{ section.reading_time }} min</span>
-            </span>
-            <span class="flex">
-              <!-- Icon pencil -->
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-              </svg>
-              <span class="ml-1">{{ section.word_count }} words</span>
-            </span>
+        <!-- Read time and word count -->
+        <div class="flex flex-wrap py-2">
+          <div class="flex items-center w-1/3">
+            <div class="flex space-x-3 text-gray-900 dark:text-gray-400">
+              <span class="flex">
+                <!-- Icon clock -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="ml-1">{{ page.reading_time }} min</span>
+              </span>
+              <span class="flex">
+                <!-- Icon pencil -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                </svg>
+                <span class="ml-1">{{ page.word_count }} words</span>
+              </span>
+            </div>
           </div>
         </div>
+
+        <!-- Summary -->
+        <div class="text-bold mt-2">
+          {{ page.summary | safe }}
+          <a class="flex py-2" href='{{ page.permalink }}'>
+            Read More
+            <svg class="w-6 h-6 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
       </div>
-
-
-      <!-- Content -->
-      <div class="text-bold mt-2">
-        {{ section.content | safe }}
-      </div>
-
-    </div>
+      {% endfor %}
   </div>
 </div>
 {% endblock content %}
