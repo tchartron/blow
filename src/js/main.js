@@ -36,3 +36,12 @@ function switchTheme() {
     document.getElementById('light').classList.remove('hidden');
   }
 }
+
+function toggleSidebar() {
+  let sidebar = document.getElementById('sidebar');
+  if (sidebar.classList.includes('translate-x-0')) {
+    console.log('visible')
+  } else {
+    console.log('not visible')
+  }
+}
