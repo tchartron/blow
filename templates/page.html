@@ -8,7 +8,7 @@
     </h1>
     <div class="flex">
 
-      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800">
+      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800">
         <div class="flex flex-col py-2 justify-center">
          <!-- <h2 class="text-2xl text-bold"><a href='{{ page.permalink }}'>{{ page.title }}</a></h2> -->
           <p class="text-bold">{{ page.description }}</p>
@@ -103,12 +103,12 @@
   </div>
   {% if page.extra.toc %}
     <div class="flex items-center flex-col md:mt-10 w-1/5">
-      <aside class="menu" style="position: sticky; top: 48px">
+      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800" style="position: sticky; top: 48px">
         <p class="text-bold">Contents</p>
         <ul class="">
           {% for h1 in page.toc %}
           <li>
-            <a id="link-{{h1.id}}" class="toc is-size-7 {% if loop.first %}is-active{% endif %}"
+            <a id="link-{{h1.id}}" class="text-xl {% if loop.first %}is-active{% endif %}"
               href="{{ h1.permalink | safe }}">
               {{ h1.title }}
             </a>
@@ -116,7 +116,7 @@
             <ul>
               {% for h2 in h1.children %}
               <li>
-                <a id="link-{{h2.id}}" class="toc is-size-7" href="{{ h2.permalink | safe }}">
+                <a id="link-{{h2.id}}" class="text-lg pl-2" href="{{ h2.permalink | safe }}">
                   {{ h2.title }}
                 </a>
               </li>
@@ -126,7 +126,7 @@
           </li>
           {% endfor %}
         </ul>
-      </aside>
+      </div>
     </div>
     {% endif %}
 </div>
