@@ -1,5 +1,5 @@
 module.exports = {
-     purge: [
+   purge: [
       './templates/**/*.html',
       './static/js/**/*.js',
    ],
@@ -11,4 +11,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+   preflight: false,
+  }
 }
