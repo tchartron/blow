@@ -125,7 +125,7 @@
 
         <!---------------------------- Sidebar Menu ---------------------------->
         {% if config.extra.zt.enable_sidebar %}
-          <div id="sidebar" class="hidden flex flex-col pt-6 p-2 text-2xl text-black dark:text-gray-200 bg-gray-200 dark:bg-gray-900 transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 shadow-2xl">
+          <div id="sidebar" class="-translate-x-full flex flex-col pt-6 p-2 text-2xl text-black dark:text-gray-200 bg-gray-200 dark:bg-gray-900 transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 shadow-2xl">
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.code %}
                 {% for link in item.links %}
