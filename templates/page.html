@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="flex flex-wrap">
-  <div class="flex items-center flex-col md:mt-10 w-4/5">
+  <div class="flex items-center flex-col md:mt-10 w-4/5 pr-4">
     <h1 class="text-2xl text-bold mb-6">
       {{ page.title }}
     </h1>
@@ -103,21 +103,21 @@
   </div>
   {% if page.extra.toc %}
     <div class="flex items-center flex-col md:mt-10 w-1/5">
-      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800" style="position: sticky; top: 48px">
-        <p class="text-bold">Contents</p>
+      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800 sticky top-12">
+        <p class="text-bold text-xl">Table of contents</p>
         <ul class="">
           {% for h1 in page.toc %}
           <li>
-            <a id="link-{{h1.id}}" class="text-xl {% if loop.first %}is-active{% endif %}"
+            <a id="link-{{h1.id}}" class="text-lg {% if loop.first %}is-active{% endif %}"
               href="{{ h1.permalink | safe }}">
-              {{ h1.title }}
+              - {{ h1.title }}
             </a>
             {% if h1.children %}
             <ul>
               {% for h2 in h1.children %}
               <li>
-                <a id="link-{{h2.id}}" class="text-lg pl-2" href="{{ h2.permalink | safe }}">
-                  {{ h2.title }}
+                <a id="link-{{h2.id}}" class="text-md pl-2" href="{{ h2.permalink | safe }}">
+                  - {{ h2.title }}
                 </a>
               </li>
               {% endfor %}
