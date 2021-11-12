@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   // Switch theme action
   document.getElementById('switch-theme').addEventListener('click', switchTheme);
+
+  // ---------------- Toggle Sidebar -------------------------
+  document.getElementById('toggle-sidebar').addEventListener('click', toggleSidebar);
 });
 
 function switchTheme() {
@@ -39,7 +42,7 @@ function switchTheme() {
 
 function toggleSidebar() {
   let sidebar = document.getElementById('sidebar');
-  if (sidebar.classList.includes('translate-x-0')) {
+  if ([...sidebar.classList].includes('translate-x-0')) {
     console.log('visible')
   } else {
     console.log('not visible')
