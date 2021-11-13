@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let current_selected_toc = null
   let current_intersectiong_entry = null
   const observer = new window.IntersectionObserver(entries => {
-    console.log(entries)
-    entries.forEach(entry => {
+    entries.some(entry => {
       console.log('observe')
       // Add 'active' class if observation target is inside viewport
       // console.log(entry)
@@ -22,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('current', current_intersectiong_entry)
         if (current_intersectiong_entry !== null && current_intersectiong_entry.isIntersecting) {
           console.log('should stop')
+          return true
         }
         current_intersectiong_entry = entry
         // console.log(entry, 'active')
