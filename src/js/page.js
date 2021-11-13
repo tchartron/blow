@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // has_one_active_toc = true
         console.log(entry, 'active')
         let res = findCorrespondingTocTitle(entry.target)
-        if (current_selected_toc !== null && current_selected_toc !== res) {
+        if (typeof res !== 'undefined' && (current_selected_toc === null || current_selected_toc !== res)) {
             current_selected_toc.classList.remove('bg-blue-800');
             current_selected_toc = res
         }
@@ -93,11 +93,11 @@ function activeTocItem() {
 }
 
 function findCorrespondingTocTitle(section) {
-  let result = [...document.querySelectorAll('#toc li a')].find((item) => {
+  return [...document.querySelectorAll('#toc li a')].find((item) => {
     // console.log(item)
     // console.log(`#${section.id}`)
     // console.log(item.href.substring(item.href.indexOf("#")))
     return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
   })
-  return result
+  // return result
 }
