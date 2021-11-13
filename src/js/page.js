@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log('current', current_intersectiong_entry.target.getboundingClientRect().y < 0)
 
       if (entry.isIntersecting && (current_intersectiong_entry === null || current_intersectiong_entry.target.getboundingClientRect().y < 0)) {
+        console.log('entered')
         let res = findCorrespondingTocTitle(entry.target)
         res.parentElement.classList.add('bg-blue-800');
         current_intersectiong_entry = entry
