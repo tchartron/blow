@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(page_titles_elements)
 
   let reversed_title_elements = [...page_titles_elements].reverse();
-  let elem = getActiveTocElement(reversed_title_elements);
+  let elem = getActiveTocElement(reversed_title_elements) || page_titles_elements[0];
   console.log(elem)
   findCorrespondingTocTitle(elem).classList.add('bg-blue-800') //page load
   let previous_elem = elem
