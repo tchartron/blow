@@ -14,12 +14,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const page_titles_elements = document.querySelectorAll(page_titles_ids.join(','));
   console.log(page_titles_elements)
 
+  let reversed_title_elements = [...page_titles_elements].reverse();
   window.addEventListener('scroll', () => {
     if (current_active_toc_link === false) {
       table_of_content_links[0].classList.add('bg-blue-800')
       current_active_toc_link = table_of_content_links[0]
     } else {
-      console.log(setActiveToc(page_titles_elements))
+      console.log(setActiveToc(reversed_title_elements))
     }
   })
 
@@ -164,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // })
 });
 function setActiveToc(elements) {
-  // elements.reverse();
   return [...elements].find((item) => {
     return (item.getBoundingClientRect().y < 0)
   })
