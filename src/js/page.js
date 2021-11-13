@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
   })
   const list = document.querySelectorAll(nav_sections.join(','));
   list.forEach((el) => {
-    io.observe(el);
+    observer.observe(el);
   })
   // console.log(nav_sections)
 
