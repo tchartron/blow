@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // })
 });
 function setActiveToc(elements) {
-  elements.reverse();
+  // elements.reverse();
   return [...elements].find((item) => {
     return (item.getBoundingRect().y < 0)
   })
