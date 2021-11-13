@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
       if (entry.isIntersecting) {
         console.log('entry', entry)
         console.log('current', current_intersectiong_entry)
-        console.log('current', current_intersectiong_entry.getBoundingClientRect().y)
         if (current_intersectiong_entry !== null) {
+          console.log('current', current_intersectiong_entry.getBoundingClientRect().y)
           console.log('should stop')
         }
         current_intersectiong_entry = entry
