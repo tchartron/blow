@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // console.log(entry.intersectionRatio)
       console.log('entry', entry)
       console.log('current', current_intersectiong_entry)
-      if (current_intersectiong_entry !== null && current_intersectiong_entry.isIntersecting === false) {
+      if (current_intersectiong_entry !== null && current_intersectiong_entry.target === entry.target && entry.isIntersecting === false) {
         console.log('remove')
         //Previous entry not intersecting anymore remove class and find the new one
         let res = findCorrespondingTocTitle(current_intersectiong_entry.target)
