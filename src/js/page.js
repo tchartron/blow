@@ -9,15 +9,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // let has_one_active_toc = false
   let current_selected_toc = null
+  let current_intersectiong_entry = null
   const observer = new window.IntersectionObserver(entries => {
     entries.forEach(entry => {
       console.log('observe')
       // Add 'active' class if observation target is inside viewport
-      // console.log(entry.isIntersecting)
+      // console.log(entry)
       // console.log(entry.intersectionRatio)
       if (entry.isIntersecting) {
-        // has_one_active_toc = true
-        console.log(entry, 'active')
+        console.log('entry', entry)
+        console.log('current', current_intersectiong_entry)
+        if (first_intersectiong_section !== null && current_intersectiong_entry.isIntersecting) {
+          console.log('should stop')
+        }
+        current_intersectiong_entry = entry
+        // console.log(entry, 'active')
         let res = findCorrespondingTocTitle(entry.target)
         if (typeof res !== 'undefined' && (current_selected_toc === null || current_selected_toc !== res)) {
           // console.log('here')
