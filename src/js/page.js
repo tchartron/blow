@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (element !== previous_elem) {
       findCorrespondingTocTitle(previous_elem).classList.remove('bg-blue-800')
       findCorrespondingTocTitle(element).classList.add('bg-blue-800')
+      previous_elem = elem
     }
   })
 
