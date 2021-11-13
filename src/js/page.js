@@ -2,33 +2,51 @@ document.addEventListener("DOMContentLoaded", function() {
   // ---------------- TOC Scrollspy --------------------
   const navbar_height = document.getElementById('navbar').clientHeight
   const table_of_content = document.getElementById('toc')
-  const table_of_content_items = document.querySelectorAll('#toc li a')
+  const table_of_content_links = document.querySelectorAll('#toc li a')
   const page_content = document.getElementById('page-content')
   // const navSections = new Array($('.toc').length);
   // window.addEventListener('scroll', activeTocItem)
 
-  // let has_one_active_toc = false
-  let current_selected_toc = null
-  let current_intersectiong_entry = null
-  const observer = new window.IntersectionObserver(entries => {
-    entries.some(entry => {
+   var nav_section_ids = [];
+  [...table_of_content_links].forEach((item)=> {
+    nav_section_ids.push(item.href.substring(item.href.indexOf("#")))
+  })
+  const nav_sections_list = document.querySelectorAll(nav_section_ids.join(','));
+  console.log(nav_sections_list)
+  window.addEventListener('scroll', () => {
 
-      if (entry.isIntersecting) {
-        if (current_intersectiong_entry === null) {
-          //set entry as selected
-          setActive(entry, current_intersectiong_entry)
-          current_intersectiong_entry = entry
-          return true
-        } else {
-          if (current_intersectiong_entry.target.getboundingClientRect().y < 0) { //previous is not in viewport anymore
-            setActive(entry, current_intersectiong_entry)
-            current_intersectiong_entry = entry
-            return true
-          }
-        }
-      } else { // some entry got out of viewport
-        setNextActive(entry)
-      }
+  })
+
+// function setActiveToc(nav_sections) {
+//   nav_sections.find((item) => {
+//     return (item.)
+//   })
+// }
+
+  // let has_one_active_toc = false
+  // let current_selected_toc = null
+  // let current_intersectiong_entry = null
+
+
+  // const observer = new window.IntersectionObserver(entries => {
+  //   entries.some(entry => {
+
+  //     if (entry.isIntersecting) {
+  //       if (current_intersectiong_entry === null) {
+  //         //set entry as selected
+  //         setActive(entry, current_intersectiong_entry)
+  //         current_intersectiong_entry = entry
+  //         return true
+  //       } else {
+  //         if (current_intersectiong_entry.target.getboundingClientRect().y < 0) { //previous is not in viewport anymore
+  //           setActive(entry, current_intersectiong_entry)
+  //           current_intersectiong_entry = entry
+  //           return true
+  //         }
+  //       }
+  //     } else { // some entry got out of viewport
+  //       setNextActive(entry)
+  //     }
 
 
 
@@ -127,21 +145,21 @@ document.addEventListener("DOMContentLoaded", function() {
       //   // let res = findCorrespondingTocTitle(entry.target)
       //   // res.classList.remove('bg-blue-800');
       // }
-    })
-  }, {
-    root: null,
-    threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
-  })
+  //   })
+  // }, {
+  //   root: null,
+  //   threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+  // })
 
   // const boxElList = document.querySelectorAll('.box');
-  var nav_section_ids = [];
-  [...table_of_content_items].forEach((item)=> {
-    nav_section_ids.push(item.href.substring(item.href.indexOf("#")))
-  })
-  const nav_sections_list = document.querySelectorAll(nav_section_ids.join(','));
-  nav_sections_list.forEach((el) => {
-    observer.observe(el);
-  })
+  // var nav_section_ids = [];
+  // [...table_of_content_links].forEach((item)=> {
+  //   nav_section_ids.push(item.href.substring(item.href.indexOf("#")))
+  // })
+ // const nav_sections_list = document.querySelectorAll(nav_section_ids.join(','));
+  // nav_sections_list.forEach((el) => {
+  //   observer.observe(el);
+  // })
 });
 
 function findCorrespondingTocTitle(section) {
