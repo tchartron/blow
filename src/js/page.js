@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log('entry', entry)
       // console.log('current', current_intersectiong_entry)
 
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && (current_intersectiong_entry === null || current_intersectiong_entry.target.getboundingClientRect().y < 0)) {
         let res = findCorrespondingTocTitle(entry.target)
         res.parentElement.classList.add('bg-blue-800');
-        // current_intersectiong_entry = entry
+        current_intersectiong_entry = entry
         return true;
       }
       if (!entry.isIntersecting) {
