@@ -20,11 +20,6 @@ html {
 #page-content a {
     text-decoration: underline;
 }
-
-#page-content p {
-    @apply py-4;
-}
-
-#page-content h2 {
+#page-content p, h2, pre {
     @apply py-4;
 }
