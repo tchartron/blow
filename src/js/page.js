@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let elem = getActiveTocElement(reversed_title_elements) || page_titles_elements[0]; //If no element has gone outside of viewport on y axis
   console.log(elem)
   findCorrespondingTocTitle(elem).classList.add('bg-blue-800') //page load
-  let previous_elem = elem
+  var previous_elem = elem
   // table_of_content_links[0].classList.add('bg-blue-800'); //Page load first element selected
   window.addEventListener('scroll', () => {
     // if (current_active_toc_link === false) { // page load
