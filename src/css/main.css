@@ -20,6 +20,6 @@
     @apply py-4;
 }
 
-#page-content p {
+#page-content h2 {
     @apply py-4;
 }
