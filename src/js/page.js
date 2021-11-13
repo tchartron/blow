@@ -12,48 +12,65 @@ document.addEventListener("DOMContentLoaded", function() {
   let current_intersectiong_entry = null
   const observer = new window.IntersectionObserver(entries => {
     entries.some(entry => {
-      console.log('observe')
+      // console.log('observe')
       // Add 'active' class if observation target is inside viewport
       // console.log(entry)
       // console.log(entry.intersectionRatio)
       console.log('entry', entry)
       console.log('current', current_intersectiong_entry)
-      if (current_intersectiong_entry !== null && current_intersectiong_entry.target === entry.target && entry.isIntersecting === false) {
-        console.log('remove')
-        //Previous entry not intersecting anymore remove class and find the new one
-        let res = findCorrespondingTocTitle(current_intersectiong_entry.target)
-        current_selected_toc.parentElement.classList.remove('bg-blue-800');
-        current_intersectiong_entry = null
-      }
-      if (entry.isIntersecting && current_intersectiong_entry === null) {
-        console.log('processing')
-        if (current_intersectiong_entry !== null && current_intersectiong_entry.target.getBoundingClientRect().y > 0) {
-          console.log('stop')
-          // return true
-        }
-        if (current_intersectiong_entry !== null) {
-          console.log('current', current_intersectiong_entry.target.getBoundingClientRect().y)
-        //   console.log('should stop')
-        }
-        current_intersectiong_entry = entry
-        // console.log(entry, 'active')
+      if (current_intersectiong_entry === null && entry.isIntersecting) {
         let res = findCorrespondingTocTitle(entry.target)
-        if (typeof res !== 'undefined' && (current_selected_toc === null || current_selected_toc !== res)) {
-          // console.log('here')
-            if (current_selected_toc !== null) {
-              // console.log(res)
-              current_selected_toc.parentElement.classList.remove('bg-blue-800');
-            }
-            current_selected_toc = res
-        }
-        // console.log(res)
         res.parentElement.classList.add('bg-blue-800');
-      } else {
-        // has_one_active_toc = false
-        // console.log(entry, 'inactive')
-        // let res = findCorrespondingTocTitle(entry.target)
-        // res.classList.remove('bg-blue-800');
+        current_intersectiong_entry = entry
+        return true;
       }
+      // if (current_intersectiong_entry !== null) {
+      //   return true
+      // }
+      if (entry.isIntersecting === false) { //some section got out of viewport remove its active class and add to next sibling
+        let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+        res.parentElement.classList.remove('bg-blue-800');
+        res.parentElement.nextElementSibling.classList.add('bg-blue-800');
+        // current_intersectiong_entry = null
+      }
+      // current_intersectiong_entry = entry
+
+      // if (current_intersectiong_entry !== null && current_intersectiong_entry.target === entry.target && entry.isIntersecting === false) {
+      //   console.log('remove')
+      //   //Previous entry not intersecting anymore remove class and find the new one
+      //   let res = findCorrespondingTocTitle(current_intersectiong_entry.target)
+      //   current_selected_toc.parentElement.classList.remove('bg-blue-800');
+      //   current_intersectiong_entry = null
+      // }
+      // if (entry.isIntersecting && current_intersectiong_entry === null) {
+      //   console.log('processing')
+      //   if (current_intersectiong_entry !== null && current_intersectiong_entry.target.getBoundingClientRect().y > 0) {
+      //     console.log('stop')
+      //     // return true
+      //   }
+      //   if (current_intersectiong_entry !== null) {
+      //     console.log('current', current_intersectiong_entry.target.getBoundingClientRect().y)
+      //   //   console.log('should stop')
+      //   }
+      //   current_intersectiong_entry = entry
+      //   // console.log(entry, 'active')
+      //   let res = findCorrespondingTocTitle(entry.target)
+      //   if (typeof res !== 'undefined' && (current_selected_toc === null || current_selected_toc !== res)) {
+      //     // console.log('here')
+      //       if (current_selected_toc !== null) {
+      //         // console.log(res)
+      //         current_selected_toc.parentElement.classList.remove('bg-blue-800');
+      //       }
+      //       current_selected_toc = res
+      //   }
+      //   // console.log(res)
+      //   res.parentElement.classList.add('bg-blue-800');
+      // } else {
+      //   // has_one_active_toc = false
+      //   // console.log(entry, 'inactive')
+      //   // let res = findCorrespondingTocTitle(entry.target)
+      //   // res.classList.remove('bg-blue-800');
+      // }
     })
   }, {
     root: null,
