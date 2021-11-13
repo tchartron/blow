@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // console.log(entry)
       // console.log(entry.intersectionRatio)
       if (entry.isIntersecting) {
-        if (current_intersectiong_entry !== null && current_intersectiong_entry.target.getBoundingClientRect().y < 0) {
+        if (current_intersectiong_entry !== null && current_intersectiong_entry.target.getBoundingClientRect().y > 0) {
           console.log('stop')
           // return true
         }
