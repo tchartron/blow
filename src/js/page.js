@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
           // console.log('here')
             if (current_selected_toc !== null) {
               // console.log(res)
-              current_selected_toc.classList.remove('bg-blue-800');
+              current_selected_toc.parentElement.classList.remove('bg-blue-800');
             }
             current_selected_toc = res
         }
         // console.log(res)
-        res.classList.add('bg-blue-800');
+        res.parentElement.classList.add('bg-blue-800');
       } else {
         // has_one_active_toc = false
         // console.log(entry, 'inactive')
