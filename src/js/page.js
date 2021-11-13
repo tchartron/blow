@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function setActiveToc(elements) {
   // elements.reverse();
   return [...elements].find((item) => {
-    return (item.getBoundingRect().y < 0)
+    return (item.getBoundingClientRect().y < 0)
   })
 }
 // function findCorrespondingTocTitle(section) {
