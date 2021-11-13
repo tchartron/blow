@@ -85,9 +85,9 @@ function activeTocItem() {
 
 function findCorrespondingTocTitle(section) {
   let result = [...document.querySelectorAll('#toc li a')].find((item) => {
-    console.log(item)
-    console.log(`#${section.id}`)
-    console.log(item.href.substring(item.href.indexOf("#")))
+    // console.log(item)
+    // console.log(`#${section.id}`)
+    // console.log(item.href.substring(item.href.indexOf("#")))
     return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
   })
   return result
