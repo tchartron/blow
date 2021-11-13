@@ -17,3 +17,5 @@ zola-tailwind is a [Zola](https://www.getzola.org/) theme built with tailwindcss
 - [ ] Mobile responsive
 - [ ] Adsense ads 
 - [ ] Code highlighting
+- [ ] Favicon
+- [ ] 404
