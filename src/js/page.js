@@ -12,26 +12,53 @@ document.addEventListener("DOMContentLoaded", function() {
   let current_intersectiong_entry = null
   const observer = new window.IntersectionObserver(entries => {
     entries.some(entry => {
-      console.log('before')
-      console.log('entry', entry)
-      console.log('current', current_intersectiong_entry.target.getboundingClientRect().y < 0)
 
-      if (entry.isIntersecting && (current_intersectiong_entry === null || current_intersectiong_entry.target.getboundingClientRect().y < 0)) {
-        console.log('entered')
-        let res = findCorrespondingTocTitle(entry.target)
-        res.parentElement.classList.add('bg-blue-800');
-        current_intersectiong_entry = entry
-        return true;
+      if (entry.isIntersecting) {
+        if (current_intersectiong_entry === null) {
+          //set entry as selected
+          setActive(entry, current_intersectiong_entry)
+          current_intersectiong_entry = entry
+          return true
+        } else {
+          if (current_intersectiong_entry.target.getboundingClientRect().y < 0) { //previous is not in viewport anymore
+            setActive(entry, current_intersectiong_entry)
+            current_intersectiong_entry = entry
+            return true
+          }
+        }
+      } else { // some entry got out of viewport
+        setNextActive(entry, current_intersectiong_entry)
       }
-      console.log('after')
-      console.log('entry', entry)
-      console.log('current', current_intersectiong_entry.target.getboundingClientRect().y < 0)
-      if (!entry.isIntersecting) {
-        let res = findCorrespondingTocTitle(entry.target) //First intersection entry
-        res.parentElement.classList.remove('bg-blue-800');
-        res.parentElement.nextElementSibling.classList.add('bg-blue-800');
-        return true;
-      }
+
+
+
+
+
+
+
+
+
+
+      // console.log('before')
+      // console.log('entry', entry)
+      // console.log('current', current_intersectiong_entry.target.getboundingClientRect().y < 0)
+
+      // if (entry.isIntersecting && (current_intersectiong_entry === null || current_intersectiong_entry.target.getboundingClientRect().y < 0)) {
+      //   console.log('entered')
+      //   let res = findCorrespondingTocTitle(entry.target)
+      //   res.parentElement.classList.add('bg-blue-800');
+      //   current_intersectiong_entry = entry
+      //   return true;
+      // }
+      // console.log('after')
+      // console.log('entry', entry)
+      // console.log('current', current_intersectiong_entry.target.getboundingClientRect().y < 0)
+      // if (!entry.isIntersecting) {
+      //   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+      //   res.parentElement.classList.remove('bg-blue-800');
+      //   res.parentElement.nextElementSibling.classList.add('bg-blue-800');
+      //   return true;
+      // }
       // console.log('observe')
       // Add 'active' class if observation target is inside viewport
       // console.log(entry)
@@ -121,4 +148,23 @@ function findCorrespondingTocTitle(section) {
   return [...document.querySelectorAll('#toc li a')].find((item) => {
     return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
   })
+}
+
+function setActive(entry, previous_entry) {
+  if (previous_entry !== null) {
+    let previous_active = findCorrespondingTocTitle(previous_entry.target)
+    previous_entry.parentElement.classList.remove('bg-blue-800');
+  }
+  let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+  res.parentElement.classList.add('bg-blue-800');
+}
+function setNextActive(entry) {
+  let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+  res.parentElement.classList.remove('bg-blue-800');
+  res.parentElement.nextSiblingElement.classList.add('bg-blue-800');
+}
+function setPreviousActive(entry) {
+  let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+  res.parentElement.classList.remove('bg-blue-800');
+  res.parentElement.previousSiblingElement.classList.add('bg-blue-800');
 }
