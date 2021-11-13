@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 function getActiveTocElement(elements) {
   return [...elements].find((item) => {
-    return (item.getBoundingClientRect().y < 0)
+    return (item.getBoundingClientRect().y <= 0)
   })
 }
 function findCorrespondingTocTitle(element) {
