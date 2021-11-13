@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Add 'active' class if observation target is inside viewport
       // console.log(entry)
       // console.log(entry.intersectionRatio)
+      console.log('before')
       console.log('entry', entry)
       console.log('current', current_intersectiong_entry)
       if (current_intersectiong_entry === null && entry.isIntersecting) {
@@ -24,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         current_intersectiong_entry = entry
         return true;
       }
-      // if (current_intersectiong_entry !== null) {
-      //   return true
-      // }
+      console.log('after')
+      console.log('entry', entry)
+      console.log('current', current_intersectiong_entry)
       if (entry.isIntersecting === false) { //some section got out of viewport remove its active class and add to next sibling
         let res = findCorrespondingTocTitle(entry.target) //First intersection entry
         res.parentElement.classList.remove('bg-blue-800');
