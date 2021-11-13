@@ -12,7 +12,7 @@ zola-tailwind is a [Zola](https://www.getzola.org/) theme built with tailwindcss
 - [X] Example script to deploy to Github Pages
 - [X] Pagination
 - [X] Sliding menu with sections
-- [ ] Table of content
+- [X] Table of content (2 levels and currently viewed part highlighted)
 - [ ] Mobile responsive
 - [ ] Adsense ads 
 - [ ] Multilingue 
