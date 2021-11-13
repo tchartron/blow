@@ -162,10 +162,10 @@ function setNextActive(entry) {
   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
   console.log(res)
   res.parentElement.classList.remove('bg-blue-800');
-  res.parentElement.nextSiblingElement.classList.add('bg-blue-800');
+  res.parentElement.nextElementSibling.classList.add('bg-blue-800');
 }
 function setPreviousActive(entry) {
   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
   res.parentElement.classList.remove('bg-blue-800');
-  res.parentElement.previousSiblingElement.classList.add('bg-blue-800');
+  res.parentElement.previousElementSibling.classList.add('bg-blue-800');
 }
