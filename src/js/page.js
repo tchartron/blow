@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(entry, 'active')
         let res = findCorrespondingTocTitle(entry.target)
         if (typeof res !== 'undefined' && (current_selected_toc === null || current_selected_toc !== res)) {
+          console.log('here')
             if (current_selected_toc !== null) {
               console.log(res)
               current_selected_toc.classList.remove('bg-blue-800');
@@ -29,9 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
         res.classList.add('bg-blue-800');
       } else {
         // has_one_active_toc = false
-        console.log(entry, 'inactive')
-        let res = findCorrespondingTocTitle(entry.target)
-        res.classList.remove('bg-blue-800');
+        // console.log(entry, 'inactive')
+        // let res = findCorrespondingTocTitle(entry.target)
+        // res.classList.remove('bg-blue-800');
       }
     })
   }, {
