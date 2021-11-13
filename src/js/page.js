@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(entry, 'active')
         let res = findCorrespondingTocTitle(entry.target)
         if (typeof res !== 'undefined' && (current_selected_toc === null || current_selected_toc !== res)) {
-            current_selected_toc.classList.remove('bg-blue-800');
+            if (current_selected_toc !== null) {
+              current_selected_toc.classList.remove('bg-blue-800');
+            }
             current_selected_toc = res
         }
         console.log(res)
