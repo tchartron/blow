@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('reprocess')
       }
       if (entry.isIntersecting) {
-        console.log('intersecting')
+        console.log('processing')
         console.log('entry', entry)
-        // console.log('current', current_intersectiong_entry)
+        console.log('current', current_intersectiong_entry)
         if (current_intersectiong_entry !== null) {
           console.log('current', current_intersectiong_entry.target.getBoundingClientRect().y)
         //   console.log('should stop')
