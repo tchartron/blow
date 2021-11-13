@@ -23,9 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
   // const boxElList = document.querySelectorAll('.box');
-  [...table_of_content.children].forEach((el) => {
-    observer.observe(el);
+  var nav_sections = [];
+  [...document.querySelectorAll('#toc li a')].forEach((item)=> {
+    nav_sections.push(item.href.substring(item.href.indexOf("#")))
   })
+  console.log(nav_sections)
 
   observer.observe(page_content);
 
