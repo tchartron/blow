@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
   let current_selected_toc = null
   let current_intersectiong_entry = null
   const observer = new window.IntersectionObserver(entries => {
-    console.log(entries)
     entries.some(entry => {
       // console.log('observe')
       // Add 'active' class if observation target is inside viewport
@@ -20,23 +19,32 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log('before')
       console.log('entry', entry)
       console.log('current', current_intersectiong_entry)
-      if (current_intersectiong_entry === null && entry.isIntersecting) {
-        let res = findCorrespondingTocTitle(entry.target)
-        res.parentElement.classList.add('bg-blue-800');
-        current_intersectiong_entry = entry
-        return true;
+      if (entry.isIntersecting) {
+        if (current_intersectiong_entry === null) { // first page load
+          let res = findCorrespondingTocTitle(entry.target)
+          res.parentElement.classList.add('bg-blue-800');
+          current_intersectiong_entry = entry
+          return true;
+        }
+        if (current_intersectiong_entry.boundingClientRect.y < 0) { //previous selected is out of viewport
+          current_intersectiong_entry.target.classList.remove('bg-blue-800');
+          let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+          res.parentElement.classList.add('bg-blue-800');
+          current_intersectiong_entry = entry
+          return true;
+        }
       }
       console.log('after')
       console.log('entry', entry)
       console.log('current', current_intersectiong_entry)
-      if (entry.isIntersecting === false) { //some section got out of viewport remove its active class and add to next sibling
-        let res = findCorrespondingTocTitle(entry.target) //First intersection entry
-        res.parentElement.classList.remove('bg-blue-800');
-        res.parentElement.nextElementSibling.classList.add('bg-blue-800');
-        current_intersectiong_entry = entry
-        return true;
-        // current_intersectiong_entry = null
-      }
+      // if (entry.isIntersecting === false) { //some section got out of viewport remove its active class and add to next sibling
+      //   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+      //   res.parentElement.classList.remove('bg-blue-800');
+      //   res.parentElement.nextElementSibling.classList.add('bg-blue-800');
+      //   current_intersectiong_entry = entry
+      //   return true;
+      //   // current_intersectiong_entry = null
+      // }
       // current_intersectiong_entry = entry
 
       // if (current_intersectiong_entry !== null && current_intersectiong_entry.target === entry.target && entry.isIntersecting === false) {
