@@ -23,17 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   })
 
-function setActiveToc(elements) {
-  elements.reverse();
-  return [...elements].find((item) => {
-    return (item.getBoundingRect().y < 0)
-  })
-}
-function findCorrespondingTocTitle(section) {
-  return [...document.querySelectorAll('#toc li a')].find((item) => {
-    return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
-  })
-}
+
 
   // let has_one_active_toc = false
   // let current_selected_toc = null
@@ -173,6 +163,18 @@ function findCorrespondingTocTitle(section) {
   //   observer.observe(el);
   // })
 });
+function setActiveToc(elements) {
+  elements.reverse();
+  return [...elements].find((item) => {
+    return (item.getBoundingRect().y < 0)
+  })
+}
+function findCorrespondingTocTitle(section) {
+  return [...document.querySelectorAll('#toc li a')].find((item) => {
+    return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
+  })
+}
+
 
 
 
