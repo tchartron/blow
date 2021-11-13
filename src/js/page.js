@@ -6,18 +6,25 @@ document.addEventListener("DOMContentLoaded", function() {
   // const navSections = new Array($('.toc').length);
   window.addEventListener('scroll', activeTocItem)
 
-  const el = document.querySelector('#el')
-  const observer = new window.IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      console.log(entry)
-      console.log('ENTER')
-      return
-    }
-    console.log(entry)
-    console.log('LEAVE')
+  const observer = new window.IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      // Add 'active' class if observation target is inside viewport
+      if (entry.intersectionRatio > 0) {
+        console.log(entry, 'active')
+        entry.target.classList.add('active');
+      } else {
+        console.log(entry, 'inactive')
+        entry.target.classList.remove('active');
+      }
+    })
   }, {
     root: null,
     threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+  })
+
+  // const boxElList = document.querySelectorAll('.box');
+  [...table_of_content.children].forEach((el) => {
+    observer.observe(el);
   })
 
   observer.observe(page_content);
