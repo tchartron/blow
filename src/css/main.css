@@ -15,3 +15,11 @@
 #page-content a {
     text-decoration: underline;
 }
+
+#page-content p {
+    @apply py-4;
+}
+
+#page-content p {
+    @apply py-4;
+}
