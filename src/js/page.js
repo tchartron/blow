@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let reversed_title_elements = [...page_titles_elements].reverse();
   let elem = getActiveTocElement(reversed_title_elements) || page_titles_elements[0]; //If no element has gone outside of viewport on y axis
   console.log(elem)
-  findCorrespondingTocTitle(elem).classList.add('bg-blue-800') //page load
+  findCorrespondingTocTitle(elem).classList.add('bg-blue-700') //page load
   var previous_elem = elem
   // table_of_content_links[0].classList.add('bg-blue-800'); //Page load first element selected
   window.addEventListener('scroll', () => {
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('element', element)
     console.log('previous', previous_elem)
     if (element !== previous_elem) {
-      findCorrespondingTocTitle(previous_elem).classList.remove('bg-blue-800')
-      findCorrespondingTocTitle(element).classList.add('bg-blue-800')
+      findCorrespondingTocTitle(previous_elem).classList.remove('bg-blue-700')
+      findCorrespondingTocTitle(element).classList.add('bg-blue-700')
       previous_elem = element
     }
   })

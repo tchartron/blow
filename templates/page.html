@@ -109,15 +109,14 @@
         <p class="text-bold text-xl">Table of contents</p>
         <ul id="toc">
           {% for h1 in page.toc %}
-          <li class="pl-2 my-2 rounded-lg">
-            <a id="link-{{h1.id}}" class="text-md {% if loop.first %}is-active{% endif %}"
-              href="{{ h1.permalink | safe }}">
+          <li class="pl-2 my-2">
+            <a id="link-{{h1.id}}" class="text-md block rounded-lg p-2" href="{{ h1.permalink | safe }}">
               - {{ h1.title }}
             </a>
             {% if h1.children %}
               {% for h2 in h1.children %}
-                <li class="pl-4 my-2 rounded-lg">
-                  <a id="link-{{h2.id}}" class="text-sm" href="{{ h2.permalink | safe }}">
+                <li class="pl-4 my-2">
+                  <a id="link-{{h2.id}}" class="text-sm block rounded-lg p-2" href="{{ h2.permalink | safe }}">
                     - {{ h2.title }}
                   </a>
                 </li>
