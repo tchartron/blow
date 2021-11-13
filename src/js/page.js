@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let current_selected_toc = null
   const observer = new window.IntersectionObserver(entries => {
     entries.forEach(entry => {
+      console.log('observe')
       // Add 'active' class if observation target is inside viewport
       // console.log(entry.isIntersecting)
       // console.log(entry.intersectionRatio)
