@@ -1,0 +1,1 @@
+function activeTocItem(){console.log(scroll_position)}document.addEventListener("DOMContentLoaded",function(){document.getElementById("navbar").clientHeight,document.getElementById("toc"),window.scrollY;window.addEventListener("scroll",activeTocItem)});

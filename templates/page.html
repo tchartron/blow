@@ -35,7 +35,7 @@
             </div>
           </div>
           <!-- Author and publish date -->
-          <div class="flex w-2/3 space-x-3 text-gray-900 dark:text-gray-400">
+          <div class="flex w-2/3 space-x-3 text-gray-900 dark:text-gray-400 justify-end">
              <span class="flex items-center">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -101,22 +101,24 @@
       </div>
     </div>
   </div>
+
+  <!-- Table of content -->
   {% if page.extra.toc %}
     <div class="flex items-center flex-col md:mt-10 w-1/5">
       <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800 sticky top-12">
         <p class="text-bold text-xl">Table of contents</p>
-        <ul class="">
+        <ul id="toc">
           {% for h1 in page.toc %}
-          <li>
-            <a id="link-{{h1.id}}" class="text-lg {% if loop.first %}is-active{% endif %}"
+          <li class="pl-2">
+            <a id="link-{{h1.id}}" class="text-md {% if loop.first %}is-active{% endif %}"
               href="{{ h1.permalink | safe }}">
               - {{ h1.title }}
             </a>
             {% if h1.children %}
             <ul>
               {% for h2 in h1.children %}
-              <li>
-                <a id="link-{{h2.id}}" class="text-md pl-2" href="{{ h2.permalink | safe }}">
+              <li class="pl-4">
+                <a id="link-{{h2.id}}" class="text-sm" href="{{ h2.permalink | safe }}">
                   - {{ h2.title }}
                 </a>
               </li>
@@ -129,6 +131,7 @@
       </div>
     </div>
     {% endif %}
+
 </div>
 {% endblock %}
 
@@ -171,4 +174,8 @@
   </div>
 </div>
 {% endif %}
+{% endblock %}
+
+{% block extra_js %}
+  <script defer src="/js/page.js"></script>
 {% endblock %}
