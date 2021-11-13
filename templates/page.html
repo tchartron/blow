@@ -107,7 +107,7 @@
     <div class="flex items-center flex-col md:mt-10 w-1/5">
       <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800 sticky top-12">
         <p class="text-bold text-xl">Table of contents</p>
-        <ul>
+        <ul id="toc">
           {% for h1 in page.toc %}
           <li class="pl-2 my-2">
             <a id="link-{{h1.id}}" class="text-md block rounded-lg p-2" href="{{ h1.permalink | safe }}">
