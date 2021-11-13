@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const table_of_content_items = document.querySelectorAll('#toc li a')
   const page_content = document.getElementById('page-content')
   // const navSections = new Array($('.toc').length);
-  window.addEventListener('scroll', activeTocItem)
+  // window.addEventListener('scroll', activeTocItem)
 
   // let has_one_active_toc = false
   let current_selected_toc = null
