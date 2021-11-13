@@ -15,12 +15,23 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(page_titles_elements)
 
   let reversed_title_elements = [...page_titles_elements].reverse();
+  let elem = getActiveTocElement(reversed_title_elements);
+  findCorrespondingTocTitle(elem).classList.add('bg-blue-800') //page load
+  let previous_elem = elem
+  // table_of_content_links[0].classList.add('bg-blue-800'); //Page load first element selected
   window.addEventListener('scroll', () => {
-    if (current_active_toc_link === false) {
-      table_of_content_links[0].classList.add('bg-blue-800')
-      current_active_toc_link = table_of_content_links[0]
-    } else {
-      console.log(setActiveToc(reversed_title_elements))
+    // if (current_active_toc_link === false) { // page load
+    //   table_of_content_links[0].classList.add('bg-blue-800')
+    //   current_active_toc_link = table_of_content_links[0]
+    // } else {
+      // console.log(setActiveToc(reversed_title_elements))
+      let elem = getActiveTocElement(reversed_title_elements);
+      console.log('elem', elem)
+      console.log('previous', previous_elem)
+      if (elem !== previous_elem) {
+        previous_elem.classList.remove('bg-blue-800')
+        findCorrespondingTocTitle(elem).classList.add('bg-blue-800')
+      }
     }
   })
 
@@ -164,16 +175,16 @@ document.addEventListener("DOMContentLoaded", function() {
   //   observer.observe(el);
   // })
 });
-function setActiveToc(elements) {
+function getActiveTocElement(elements) {
   return [...elements].find((item) => {
     return (item.getBoundingClientRect().y < 0)
   })
 }
-// function findCorrespondingTocTitle(section) {
-//   return [...document.querySelectorAll('#toc li a')].find((item) => {
-//     return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
-//   })
-// }
+function findCorrespondingTocTitle(element) {
+  return [...document.querySelectorAll('#toc li a')].find((item) => {
+    return item.href.substring(item.href.indexOf("#")) === `#${element.id}`
+  })
+}
 
 
 
