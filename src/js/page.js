@@ -7,23 +7,28 @@ document.addEventListener("DOMContentLoaded", function() {
   // const navSections = new Array($('.toc').length);
   window.addEventListener('scroll', activeTocItem)
 
-  let has_one_active_toc = false
+  // let has_one_active_toc = false
+  let current_selected_toc = null
   const observer = new window.IntersectionObserver(entries => {
     entries.forEach(entry => {
       // Add 'active' class if observation target is inside viewport
       // console.log(entry.isIntersecting)
       // console.log(entry.intersectionRatio)
-      if (entry.isIntersecting && !has_one_active_toc) {
+      if (entry.isIntersecting) {
+        // has_one_active_toc = true
         console.log(entry, 'active')
         let res = findCorrespondingTocTitle(entry.target)
+        if (current_selected_toc !== null && current_selected_toc !== res) {
+            current_selected_toc.classList.remove('bg-blue-800');
+            current_selected_toc = res
+        }
         console.log(res)
         res.classList.add('bg-blue-800');
-        has_one_active_toc = true
       } else {
+        // has_one_active_toc = false
         console.log(entry, 'inactive')
         let res = findCorrespondingTocTitle(entry.target)
         res.classList.remove('bg-blue-800');
-        has_one_active_toc = false
       }
     })
   }, {
