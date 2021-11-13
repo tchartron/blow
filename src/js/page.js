@@ -16,12 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
       // Add 'active' class if observation target is inside viewport
       // console.log(entry)
       // console.log(entry.intersectionRatio)
+      if (current_intersectiong_entry === null || current_intersectiong_entry.target.getBoundingClientRect().y < 0) {
+        console.log('reprocess')
+      }
       if (entry.isIntersecting) {
+        console.log('intersecting')
         console.log('entry', entry)
-        console.log('current', current_intersectiong_entry)
+        // console.log('current', current_intersectiong_entry)
         if (current_intersectiong_entry !== null) {
           console.log('current', current_intersectiong_entry.target.getBoundingClientRect().y)
-          console.log('should stop')
+        //   console.log('should stop')
         }
         current_intersectiong_entry = entry
         // console.log(entry, 'active')
