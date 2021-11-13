@@ -11,15 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
   let current_selected_toc = null
   let current_intersectiong_entry = null
   const observer = new window.IntersectionObserver(entries => {
-    entries.forEach(entry => {
+    entries.some(entry => {
       console.log('observe')
       // Add 'active' class if observation target is inside viewport
       // console.log(entry)
       // console.log(entry.intersectionRatio)
-      if (current_intersectiong_entry === null || current_intersectiong_entry.target.getBoundingClientRect().y < 0) {
-        console.log('reprocess')
-      }
       if (entry.isIntersecting) {
+        if (current_intersectiong_entry !== null && current_intersectiong_entry.target.getBoundingClientRect().y < 0) {
+          console.log('stop')
+          // return true
+        }
         console.log('processing')
         console.log('entry', entry)
         console.log('current', current_intersectiong_entry)
