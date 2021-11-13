@@ -27,9 +27,13 @@ document.addEventListener("DOMContentLoaded", function() {
   [...document.querySelectorAll('#toc li a')].forEach((item)=> {
     nav_sections.push(item.href.substring(item.href.indexOf("#")))
   })
-  console.log(nav_sections)
+  const list = document.querySelectorAll(nav_sections.join(','));
+  list.forEach((el) => {
+    io.observe(el);
+  })
+  // console.log(nav_sections)
 
-  observer.observe(page_content);
+  // observer.observe(page_content);
 
   // tocItems.each(function (i) {
   //   let id = $(this).attr("id").substring(5);
