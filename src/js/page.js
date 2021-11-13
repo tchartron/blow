@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
       table_of_content_links[0].classList.add('bg-blue-800')
       current_active_toc_link = table_of_content_links[0]
     } else {
-      console.log(setActive(page_titles_elements))
+      console.log(setActiveToc(page_titles_elements))
     }
   })
 
@@ -169,31 +169,31 @@ function setActiveToc(elements) {
     return (item.getBoundingRect().y < 0)
   })
 }
-function findCorrespondingTocTitle(section) {
-  return [...document.querySelectorAll('#toc li a')].find((item) => {
-    return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
-  })
-}
+// function findCorrespondingTocTitle(section) {
+//   return [...document.querySelectorAll('#toc li a')].find((item) => {
+//     return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
+//   })
+// }
 
 
 
 
-function setActive(entry, previous_entry) {
-  if (previous_entry !== null) {
-    let previous_active = findCorrespondingTocTitle(previous_entry.target)
-    previous_entry.parentElement.classList.remove('bg-blue-800');
-  }
-  let res = findCorrespondingTocTitle(entry.target) //First intersection entry
-  res.parentElement.classList.add('bg-blue-800');
-}
-function setNextActive(entry) {
-  let res = findCorrespondingTocTitle(entry.target) //First intersection entry
-  console.log(res)
-  res.parentElement.classList.remove('bg-blue-800');
-  res.parentElement.nextElementSibling.classList.add('bg-blue-800');
-}
-function setPreviousActive(entry) {
-  let res = findCorrespondingTocTitle(entry.target) //First intersection entry
-  res.parentElement.classList.remove('bg-blue-800');
-  res.parentElement.previousElementSibling.classList.add('bg-blue-800');
-}
+// function setActive(entry, previous_entry) {
+//   if (previous_entry !== null) {
+//     let previous_active = findCorrespondingTocTitle(previous_entry.target)
+//     previous_entry.parentElement.classList.remove('bg-blue-800');
+//   }
+//   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+//   res.parentElement.classList.add('bg-blue-800');
+// }
+// function setNextActive(entry) {
+//   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+//   console.log(res)
+//   res.parentElement.classList.remove('bg-blue-800');
+//   res.parentElement.nextElementSibling.classList.add('bg-blue-800');
+// }
+// function setPreviousActive(entry) {
+//   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+//   res.parentElement.classList.remove('bg-blue-800');
+//   res.parentElement.previousElementSibling.classList.add('bg-blue-800');
+// }
