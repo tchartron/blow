@@ -115,15 +115,13 @@
               - {{ h1.title }}
             </a>
             {% if h1.children %}
-            <ul>
               {% for h2 in h1.children %}
-              <li class="pl-4">
-                <a id="link-{{h2.id}}" class="text-sm" href="{{ h2.permalink | safe }}">
-                  - {{ h2.title }}
-                </a>
-              </li>
+                <li class="pl-4">
+                  <a id="link-{{h2.id}}" class="text-sm" href="{{ h2.permalink | safe }}">
+                    - {{ h2.title }}
+                  </a>
+                </li>
               {% endfor %}
-            </ul>
             {% endif %}
           </li>
           {% endfor %}
