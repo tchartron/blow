@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     entries.some(entry => {
       console.log('before')
       console.log('entry', entry)
-      console.log('current', current_intersectiong_entry.getboundingClientRect().y < 0)
+      console.log('current', current_intersectiong_entry.target.getboundingClientRect().y < 0)
 
       if (entry.isIntersecting && (current_intersectiong_entry === null || current_intersectiong_entry.target.getboundingClientRect().y < 0)) {
         let res = findCorrespondingTocTitle(entry.target)
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       console.log('after')
       console.log('entry', entry)
-      console.log('current', current_intersectiong_entry.getboundingClientRect().y < 0)
+      console.log('current', current_intersectiong_entry.target.getboundingClientRect().y < 0)
       if (!entry.isIntersecting) {
         let res = findCorrespondingTocTitle(entry.target) //First intersection entry
         res.parentElement.classList.remove('bg-blue-800');
