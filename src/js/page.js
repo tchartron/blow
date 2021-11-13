@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (entry.isIntersecting) {
         console.log('entry', entry)
         console.log('current', current_intersectiong_entry)
-        if (first_intersectiong_section !== null && current_intersectiong_entry.isIntersecting) {
+        if (current_intersectiong_entry !== null && current_intersectiong_entry.isIntersecting) {
           console.log('should stop')
         }
         current_intersectiong_entry = entry
