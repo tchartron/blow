@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
       // Add 'active' class if observation target is inside viewport
       if (entry.intersectionRatio > 0) {
         console.log(entry, 'active')
-        entry.target.classList.add('active');
+        entry.target.classList.add('bg-blue-800');
       } else {
         console.log(entry, 'inactive')
-        entry.target.classList.remove('active');
+        entry.target.classList.remove('bg-blue-800');
       }
     })
   }, {
