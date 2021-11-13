@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let current_selected_toc = null
   let current_intersectiong_entry = null
   const observer = new window.IntersectionObserver(entries => {
+    console.log(entries)
     entries.some(entry => {
       // console.log('observe')
       // Add 'active' class if observation target is inside viewport
@@ -32,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
         let res = findCorrespondingTocTitle(entry.target) //First intersection entry
         res.parentElement.classList.remove('bg-blue-800');
         res.parentElement.nextElementSibling.classList.add('bg-blue-800');
+        current_intersectiong_entry = entry
+        return true;
         // current_intersectiong_entry = null
       }
       // current_intersectiong_entry = entry
