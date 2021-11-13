@@ -25,13 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
     //   current_active_toc_link = table_of_content_links[0]
     // } else {
       // console.log(setActiveToc(reversed_title_elements))
-      let elem = getActiveTocElement(reversed_title_elements);
-      console.log('elem', elem)
-      console.log('previous', previous_elem)
-      if (elem !== previous_elem) {
-        previous_elem.classList.remove('bg-blue-800')
-        findCorrespondingTocTitle(elem).classList.add('bg-blue-800')
-      }
+    let elem = getActiveTocElement(reversed_title_elements);
+    console.log('elem', elem)
+    console.log('previous', previous_elem)
+    if (elem !== previous_elem) {
+      previous_elem.classList.remove('bg-blue-800')
+      findCorrespondingTocTitle(elem).classList.add('bg-blue-800')
     }
   })
 
