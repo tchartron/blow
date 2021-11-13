@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('element', element)
     console.log('previous', previous_elem)
     if (element !== previous_elem) {
-      previous_elem.classList.remove('bg-blue-800')
+      findCorrespondingTocTitle(previous_elem).classList.remove('bg-blue-800')
       findCorrespondingTocTitle(element).classList.add('bg-blue-800')
     }
   })
