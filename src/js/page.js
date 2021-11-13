@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log('entry', entry)
       console.log('current', current_intersectiong_entry)
       if (current_intersectiong_entry !== null && current_intersectiong_entry.isIntersecting === false) {
+        console.log('remove')
         //Previous entry not intersecting anymore remove class and find the new one
         let res = findCorrespondingTocTitle(current_intersectiong_entry.target)
         current_selected_toc.parentElement.classList.remove('bg-blue-800');
