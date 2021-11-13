@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
     page_titles_ids.push(item.href.substring(item.href.indexOf("#")))
   })
   const page_titles_elements = document.querySelectorAll(page_titles_ids.join(','));
-  console.log(page_titles_elements)
+  // console.log(page_titles_elements)
 
   let reversed_title_elements = [...page_titles_elements].reverse();
   let elem = getActiveTocElement(reversed_title_elements) || page_titles_elements[0]; //If no element has gone outside of viewport on y axis
-  console.log(elem)
+  // console.log(elem)
   findCorrespondingTocTitle(elem).classList.add('bg-blue-700') //page load
   var previous_elem = elem
   // table_of_content_links[0].classList.add('bg-blue-800'); //Page load first element selected
@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // } else {
       // console.log(setActiveToc(reversed_title_elements))
     let element = getActiveTocElement(reversed_title_elements) || page_titles_elements[0];
-    console.log('element', element)
-    console.log('previous', previous_elem)
+    // console.log('element', element)
+    // console.log('previous', previous_elem)
     if (element !== previous_elem) {
       findCorrespondingTocTitle(previous_elem).classList.remove('bg-blue-700')
       findCorrespondingTocTitle(element).classList.add('bg-blue-700')
