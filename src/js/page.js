@@ -2,8 +2,25 @@ document.addEventListener("DOMContentLoaded", function() {
   // ---------------- TOC Scrollspy --------------------
   const navbar_height = document.getElementById('navbar').clientHeight
   const table_of_content = document.getElementById('toc')
+  const page_content = document.getElementById('page-content')
   // const navSections = new Array($('.toc').length);
   window.addEventListener('scroll', activeTocItem)
+
+  const el = document.querySelector('#el')
+  const observer = new window.IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      console.log(entry)
+      console.log('ENTER')
+      return
+    }
+    console.log(entry)
+    console.log('LEAVE')
+  }, {
+    root: null,
+    threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+  })
+
+  observer.observe(page_content);
 
   // tocItems.each(function (i) {
   //   let id = $(this).attr("id").substring(5);
