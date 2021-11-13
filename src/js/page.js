@@ -20,11 +20,12 @@ document.addEventListener("DOMContentLoaded", function() {
         let res = findCorrespondingTocTitle(entry.target)
         if (typeof res !== 'undefined' && (current_selected_toc === null || current_selected_toc !== res)) {
             if (current_selected_toc !== null) {
+              console.log(res)
               current_selected_toc.classList.remove('bg-blue-800');
             }
             current_selected_toc = res
         }
-        console.log(res)
+        // console.log(res)
         res.classList.add('bg-blue-800');
       } else {
         // has_one_active_toc = false
