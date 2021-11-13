@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // ---------------- TOC Scrollspy --------------------
   const navbar_height = document.getElementById('navbar').clientHeight
   const table_of_content = document.getElementById('toc')
-  let scroll_position = window.scrollY
+  var scroll_position = window.scrollY
   // const navSections = new Array($('.toc').length);
   window.addEventListener('scroll', activeTocItem)
 
