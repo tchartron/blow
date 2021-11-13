@@ -6,22 +6,34 @@ document.addEventListener("DOMContentLoaded", function() {
   const page_content = document.getElementById('page-content')
   // const navSections = new Array($('.toc').length);
   // window.addEventListener('scroll', activeTocItem)
-
-   var nav_section_ids = [];
+  let current_active_toc_link = false
+  let page_titles_ids = [];
   [...table_of_content_links].forEach((item)=> {
-    nav_section_ids.push(item.href.substring(item.href.indexOf("#")))
+    page_titles_ids.push(item.href.substring(item.href.indexOf("#")))
   })
-  const nav_sections_list = document.querySelectorAll(nav_section_ids.join(','));
-  console.log(nav_sections_list)
+  const page_titles_elements = document.querySelectorAll(page_titles_ids.join(','));
+  console.log(page_titles_elements)
+
   window.addEventListener('scroll', () => {
-
+    if (current_active_toc_link === false) {
+      table_of_content_links[0].classList.add('bg-blue-800')
+      current_active_toc_link = table_of_content_links[0]
+    } else {
+      console.log(setActive(page_titles_elements))
+    }
   })
 
-// function setActiveToc(nav_sections) {
-//   nav_sections.find((item) => {
-//     return (item.)
-//   })
-// }
+function setActiveToc(elements) {
+  elements.reverse();
+  return [...elements].find((item) => {
+    return (item.getBoundingRect().y < 0)
+  })
+}
+function findCorrespondingTocTitle(section) {
+  return [...document.querySelectorAll('#toc li a')].find((item) => {
+    return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
+  })
+}
 
   // let has_one_active_toc = false
   // let current_selected_toc = null
@@ -162,11 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // })
 });
 
-function findCorrespondingTocTitle(section) {
-  return [...document.querySelectorAll('#toc li a')].find((item) => {
-    return item.href.substring(item.href.indexOf("#")) === `#${section.id}`
-  })
-}
+
 
 function setActive(entry, previous_entry) {
   if (previous_entry !== null) {
