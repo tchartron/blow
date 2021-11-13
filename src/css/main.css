@@ -11,6 +11,11 @@
   }
 }
 
+/* Global default styles */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Default Pages content styles */
 #page-content a {
     text-decoration: underline;
