@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
       } else { // some entry got out of viewport
-        setNextActive(entry, current_intersectiong_entry)
+        setNextActive(entry)
       }
 
 
@@ -160,6 +160,7 @@ function setActive(entry, previous_entry) {
 }
 function setNextActive(entry) {
   let res = findCorrespondingTocTitle(entry.target) //First intersection entry
+  console.log(res)
   res.parentElement.classList.remove('bg-blue-800');
   res.parentElement.nextSiblingElement.classList.add('bg-blue-800');
 }
