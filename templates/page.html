@@ -6,7 +6,7 @@
     <h1 class="text-2xl text-bold mb-6">
       {{ page.title }}
     </h1>
-    <div id="page-content" class="flex">
+    <div class="flex">
 
       <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800">
         <div class="flex flex-col py-2 justify-center">
@@ -107,7 +107,7 @@
     <div class="flex items-center flex-col md:mt-10 w-1/5">
       <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800 sticky top-12">
         <p class="text-bold text-xl">Table of contents</p>
-        <ul id="toc">
+        <ul>
           {% for h1 in page.toc %}
           <li class="pl-2 my-2">
             <a id="link-{{h1.id}}" class="text-md block rounded-lg p-2" href="{{ h1.permalink | safe }}">
