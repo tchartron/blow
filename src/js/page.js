@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(page_titles_elements)
 
   let reversed_title_elements = [...page_titles_elements].reverse();
-  let elem = getActiveTocElement(reversed_title_elements) || page_titles_elements[0];
+  let elem = getActiveTocElement(reversed_title_elements) || page_titles_elements[0]; //If no element has gone outside of viewport on y axis
   console.log(elem)
   findCorrespondingTocTitle(elem).classList.add('bg-blue-800') //page load
   let previous_elem = elem
@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
     //   current_active_toc_link = table_of_content_links[0]
     // } else {
       // console.log(setActiveToc(reversed_title_elements))
-    let elem = getActiveTocElement(reversed_title_elements);
-    console.log('elem', elem)
+    let element = getActiveTocElement(reversed_title_elements) || page_titles_elements[0];
+    console.log('element', element)
     console.log('previous', previous_elem)
-    if (elem !== previous_elem) {
+    if (element !== previous_elem) {
       previous_elem.classList.remove('bg-blue-800')
-      findCorrespondingTocTitle(elem).classList.add('bg-blue-800')
+      findCorrespondingTocTitle(element).classList.add('bg-blue-800')
     }
   })
 
