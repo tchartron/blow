@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   // ---------------- Selected Navbar Link -------------------------
-  let navbar_links = document.querySelector('.nav-links').children;
+  let navbar_links = document.querySelectorAll('.nav-links a');
   let current_location = window.location.href;
   let selected_navbar_link = [...navbar_links].filter((item) => {
     return (item.href === current_location)
