@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A theme for Zola SSG built with tailwind css",
   "scripts": {
-    "uglify": "uglifyjs ./src/js/main.js --compress --mangle -o ./static/js/main.js && uglifyjs ./src/js/page.js --compress --mangle -o ./static/js/page.js && uglifyjs ./src/js/search.js --compress --mangle -o ./static/js/search.js",
+    "uglify": "uglifyjs ./src/js/main.js --compress --mangle -o ./static/js/main.js && uglifyjs ./src/js/page.js --compress --mangle -o ./static/js/page.js && uglifyjs ./src/js/search.js --compress --mangle -o ./static/js/search.js && uglifyjs ./src/js/lang.js --compress --mangle -o ./static/js/lang.js",
     "dev": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css --verbose ",
     "watch": "NODE_ENV=development postcss ./src/css/main.css -o ./static/css/main.css -w --verbose",
     "prod": "npm run uglify && NODE_ENV=production  postcss ./src/css/main.css -o ./static/css/main.css --verbose"
