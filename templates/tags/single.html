@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="flex items-center flex-col md:mt-10">
+<div class="flex items-center flex-col mt-10">
   <h1 class="text-2xl text-bold mb-6">
     Tag : {{ term.name }}
   </h1>
-  <div class="flex flex-col gap-y-6 w-2/3">
+  <div class="flex flex-col gap-y-6 w-full px-4 sm:w-2/3">
     {% if paginator %}
     {% set pages = paginator.pages %}
     {% else %}
