@@ -66,10 +66,12 @@ function toggleMobileMenu() {
   let menu = document.querySelector('#mobile-menu div.nav-links');
   if ([...menu.classList].includes('h-screen')) {
     document.body.classList.remove("overflow-hidden", "relative")
+    document.documentElement.classList.remove('overflow-hidden')
     menu.classList.remove('h-screen')
     menu.classList.add('h-0')
   } else {
     document.body.classList.add("overflow-hidden", "relative")
+    document.documentElement.classList.add('overflow-hidden')
     menu.classList.remove('h-0')
     menu.classList.add('h-screen')
   }
