@@ -74,6 +74,9 @@ items = [
 title = "Main title"
 image = "https://via.placeholder.com/200"
 
+[extra.404]
+image = "https://via.placeholder.com/200"
+
 [extra.default_author]
 name = "John Doe"
 avatar = "https://via.placeholder.com/200"
