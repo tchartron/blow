@@ -38,7 +38,7 @@ items = [
         { url = "/tags", name = "Tags" },
     ] },
     { lang = "fr", links = [
-        { url = "/fr/", name = "Accueil" },
+        { url = "/fr", name = "Accueil" },
         { url = "/fr/categories", name = "Categories" },
         { url = "/fr/tags", name = "Tags" },
     ] },
