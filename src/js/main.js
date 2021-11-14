@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // ---------------- Toggle Sidebar -------------------------
   document.getElementById('toggle-sidebar').addEventListener('click', toggleSidebar);
+
+  // ---------------- Toggle Mobile menu -------------------------
+  document.getElementById('toggle-mobile-menu').addEventListener('click', toggleMobileMenu);
 });
 
 function switchTheme() {
@@ -56,5 +59,18 @@ function toggleSidebar() {
     document.body.style.setProperty("overflow", "hidden")
     sidebar.classList.remove('-translate-x-full')
     sidebar.classList.add('translate-x-0')
+  }
+}
+
+function toggleMobileMenu() {
+  let menu = document.getElementById('mobile-menu');
+  if ([...sidebar.classList].includes('translate-y-0')) {
+    document.body.style.removeProperty("overflow")
+    sidebar.classList.remove('translate-y-0')
+    sidebar.classList.add('-translate-y-full')
+  } else {
+    document.body.style.setProperty("overflow", "hidden")
+    sidebar.classList.remove('-translate-y-full')
+    sidebar.classList.add('translate-y-0')
   }
 }
