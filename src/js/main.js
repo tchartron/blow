@@ -2,11 +2,17 @@ document.addEventListener("DOMContentLoaded", function() {
   // ---------------- Selected Navbar Link -------------------------
   let navbar_links = document.querySelector('.nav-links').children;
   let current_location = window.location.href;
-  let selected_navbar_link = [...navbar_links].find((item) => {
+  let selected_navbar_link = [...navbar_links].filter((item) => {
     return (item.href === current_location)
   })
   if (typeof selected_navbar_link !== 'undefined') {
-    selected_navbar_link.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+    if (Array.isArray(selected_navbar_link)) {
+      for (let element of selected_navbar_link) {
+        element.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+      }
+    } else {
+      selected_navbar_link.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+    }
   }
 
   // ---------------- Switch Theme -------------------------
