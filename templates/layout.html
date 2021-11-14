@@ -151,8 +151,10 @@
               <span class="sr-only">Switch Lang</span>
               {% for item in config.extra.lang.items %}
                 {% if lang == item.lang %}
-                  <a class="" href="{{ item.base_url }}">{{ item.name }}</a>
-                  <a class="" href="{{ item.base_url }}">{{ item.name }}</a>
+                  {% for link in item.links %}
+                    <a class="" href="{{ item.base_url }}">{{ item.name }}</a>
+                    <a class="" href="{{ item.base_url }}">{{ item.name }}</a>
+                  {% endfor %}
                 {% endif %}
               {% endfor %}
             </div>
