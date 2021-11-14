@@ -14,8 +14,8 @@ zola-tailwind is a [Zola](https://www.getzola.org/) theme built with tailwindcss
 - [X] Sliding menu with sections
 - [X] Table of content (2 levels and currently viewed part highlighted)
 - [X] Multilingue 
-- [ ] 404
+- [X] 404
 - [ ] Mobile responsive
-- [ ] Adsense ads 
+- [ ] Adsense ads
 - [ ] Code highlighting
 - [ ] Favicon
