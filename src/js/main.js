@@ -64,13 +64,13 @@ function toggleSidebar() {
 
 function toggleMobileMenu() {
   let menu = document.getElementById('mobile-menu');
-  if ([...sidebar.classList].includes('translate-y-0')) {
+  if ([...menu.classList].includes('translate-y-0')) {
     document.body.style.removeProperty("overflow")
-    sidebar.classList.remove('translate-y-0')
-    sidebar.classList.add('-translate-y-full')
+    menu.classList.remove('translate-y-0')
+    menu.classList.add('-translate-y-full')
   } else {
     document.body.style.setProperty("overflow", "hidden")
-    sidebar.classList.remove('-translate-y-full')
-    sidebar.classList.add('translate-y-0')
+    menu.classList.remove('-translate-y-full')
+    menu.classList.add('translate-y-0')
   }
 }
