@@ -152,7 +152,7 @@
               {% for item in config.extra.lang.items %}
                 {% if lang == item.lang %}
                   {% for link in item.links %}
-                    <a class="" href="{{ link.base_url }}">{{ link.name }}</a>
+                    <a class="flex justify-center py-2 hover:text-gray-800 dark:hover:text-white" href="{{ link.base_url }}">{{ link.name }}</a>
                   {% endfor %}
                 {% endif %}
               {% endfor %}
