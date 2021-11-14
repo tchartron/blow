@@ -204,8 +204,8 @@
     </div>
 
     <!----------------------------- Mobile menu ----------------------------->
-    <div id="mobile-menu" class="sm:hidden -translate-y-full transition-all duration-500 ease-in-out transform top-0 fixed z-10 w-screen dark:bg-gray-800">
-      <div class="nav-links flex flex-col space-y-4 items-center">
+    <div id="mobile-menu" class="sm:hidden">
+      <div class="nav-links flex flex-col space-y-4 items-center -translate-y-full transition-all duration-500 ease-in-out transform top-0 fixed z-10 w-screen dark:bg-gray-800">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         {% for item in config.extra.navbar.items %}
           {% if lang == item.lang %}

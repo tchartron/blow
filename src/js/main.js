@@ -63,7 +63,7 @@ function toggleSidebar() {
 }
 
 function toggleMobileMenu() {
-  let menu = document.getElementById('mobile-menu');
+  let menu = document.querySelector('#mobile-menu div.nav-links');
   if ([...menu.classList].includes('translate-y-0')) {
     document.body.style.removeProperty("overflow")
     menu.classList.remove('translate-y-0')
