@@ -30,6 +30,14 @@ zt.enable_adsense = true
 zt.enable_multilingue = true
 zt.adsense_link = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=myclientid"
 
+[extra.lang]
+items = [
+    { lang = 'en', base_url = "/", name = "English" },
+    { lang = 'en', base_url = "/", name = "French" },
+    { lang = 'fr', base_url = "/fr", name = "English" },
+    { lang = 'fr', base_url = "/fr", name = "French" }
+]
+
 [extra.navbar]
 items = [
     { lang = "en", links = [

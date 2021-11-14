@@ -141,11 +141,18 @@
 
         {% if config.extra.zt.enable_multilingue %}
         <!-- Language change button -->
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-6 h-6 bg-gray-200 text-gray-800 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
         </svg>
-        <div class="flex flex-col w-12">
-          <a href="/fr">French</a>
+        <div class="relative">
+          <div id="switch-lang" class="hidden absolute z-10 rounded-lg divide-y bg-gray-300 dark:bg-gray-700 flex flex-col w-12">
+             {% for item in config.extra.lang.items %}
+              {% if item.lang == item.lang %}
+                <a href="{{ item.base_url }}">{{ item.name }}</a>
+                <a href="{{ item.base_url }}">{{ item.name }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         <!-- Theme switch button -->
@@ -263,6 +270,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
     <script src="/search_index.{{lang}}.js"></script>
     <script defer src="/js/search.js"></script>
+  {% endif %}
+  {% if config.extra.zt.enable_multilingue %}
+    <script defer src="/js/lang.js"></script>
   {% endif %}
   {% if config.extra.zt.enable_adsense %}
     <script async src="{{config.extra.zt.adsense_link}}"
