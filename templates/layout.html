@@ -214,6 +214,16 @@
             {% endfor %}
           {% endif %}
         {% endfor %}
+
+        {% if config.extra.zt.enable_sidebar %}
+            {% for item in config.extra.sidebar.items %}
+              {% if lang == item.lang %}
+                {% for link in item.links %}
+                  <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+        {% endif %}
       </div>
     </div>
   </nav>
