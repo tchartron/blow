@@ -66,11 +66,11 @@ function toggleMobileMenu() {
   let menu = document.querySelector('#mobile-menu div.nav-links');
   if ([...menu.classList].includes('translate-y-0')) {
     document.body.style.removeProperty("overflow")
-    menu.classList.remove('translate-y-0')
-    menu.classList.add('-translate-y-full')
+    menu.classList.remove('h-screen')
+    menu.classList.add('h-0', hidden)
   } else {
     document.body.style.setProperty("overflow", "hidden")
-    menu.classList.remove('-translate-y-full')
-    menu.classList.add('translate-y-0')
+    menu.classList.remove('h-0', 'hidden')
+    menu.classList.add('h-screen')
   }
 }
