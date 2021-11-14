@@ -64,7 +64,7 @@ function toggleSidebar() {
 
 function toggleMobileMenu() {
   let menu = document.querySelector('#mobile-menu div.nav-links');
-  if ([...menu.classList].includes('translate-y-0')) {
+  if ([...menu.classList].includes('h-screen')) {
     document.body.style.removeProperty("overflow")
     menu.classList.remove('h-screen')
     menu.classList.add('h-0', hidden)
