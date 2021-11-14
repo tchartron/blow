@@ -204,7 +204,7 @@
     </div>
 
     <!----------------------------- Mobile menu ----------------------------->
-    <div id="mobile-menu" class="sm:hidden -translate-y-full transition-all duration-500 ease-in-out fixed z-10 w-screen dark:bg-gray-800">
+    <div id="mobile-menu" class="sm:hidden -translate-y-full transition-all duration-500 ease-in-out transform top-0 fixed z-10 w-screen dark:bg-gray-800">
       <div class="nav-links flex flex-col space-y-4 items-center">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         {% for item in config.extra.navbar.items %}
@@ -214,15 +214,6 @@
             {% endfor %}
           {% endif %}
         {% endfor %}
-
-        {% if config.extra.zt.enable_sidebar %}
-        <!-- More ... Button (sidebar) -->
-        <button id="toggle-sidebar">
-          <svg class="w-7 h-7 text-gray-800 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-          </svg>
-        </button>
-        {% endif %}
       </div>
     </div>
   </nav>
