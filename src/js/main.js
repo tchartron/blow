@@ -67,10 +67,10 @@ function toggleMobileMenu() {
   if ([...menu.classList].includes('h-screen')) {
     document.body.style.removeProperty("overflow")
     menu.classList.remove('h-screen')
-    menu.classList.add('h-0', hidden)
+    menu.classList.add('h-0')
   } else {
     document.body.style.setProperty("overflow", "hidden")
-    menu.classList.remove('h-0', 'hidden')
+    menu.classList.remove('h-0')
     menu.classList.add('h-screen')
   }
 }
