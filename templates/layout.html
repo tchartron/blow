@@ -150,7 +150,7 @@
             <div id="switch-lang-panel" class="hidden absolute top-12 -left-1/2 z-10 p-4 rounded-lg divide-y bg-gray-300 dark:bg-gray-800 text-gray-800 dark:text-gray-400 flex flex-col w-28 ">
               <span class="sr-only">Switch Lang</span>
               {% for item in config.extra.lang.items %}
-                {% if item.lang == item.lang %}
+                {% if lang == item.lang %}
                   <a class="" href="{{ item.base_url }}">{{ item.name }}</a>
                   <a class="" href="{{ item.base_url }}">{{ item.name }}</a>
                 {% endif %}
