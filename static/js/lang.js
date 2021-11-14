@@ -1,0 +1,1 @@
+function switchLang(n){console.log(n),document.getElementById("switch-lang-panel").classList.toggle("hidden")}document.addEventListener("DOMContentLoaded",function(){document.getElementById("switch-lang").addEventListener("click",switchLang)});
