@@ -56,10 +56,8 @@ hard_link_static = false
 #     ]
 #
 taxonomies = [
-    {name = "tags", paginate_by = 5, feed = true, lang = "en"},
-    {name = "tags", paginate_by = 5, feed = true, lang = "fr"},
-    {name = "categories", paginate_by = 5, feed = true, lang = "en"},
-    {name = "categories", paginate_by = 5, feed = true, lang = "fr"},
+    {name = "tags", paginate_by = 5, feed = true},
+    {name = "categories", paginate_by = 5, feed = true},
 ]
 
 # When set to "true", a search index is built from the pages and section
@@ -143,13 +141,14 @@ truncate_content_length = 100
 # as well as its own search configuration and translations (see above for details on those)
 [languages]
 # For example
-# [languages.fr]
-# title = "Mon blog"
-# generate_feed = true
-# taxonomies = [
-#    {name = "auteurs"},
-#    {name = "tags"},
-# ]
+[languages.fr]
+title = "Zola Tailwind"
+description = "Un thème pour Zola utilisant Tailwindcss"
+generate_feed = false
+taxonomies = [
+    {name = "tags", paginate_by = 5, feed = true},
+    {name = "categories", paginate_by = 5, feed = true},
+]
 # build_search_index = false
 
 # You can put any kind of data here. The data
