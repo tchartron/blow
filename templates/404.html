@@ -2,14 +2,14 @@
 
 {% block content %}
 <div class="flex items-center flex-col md:mt-40">
-  <h1 class="text-xl text-bold">
+  <h1 class="text-xl text-bold mb-4">
     404 Not Found
   </h1>
-  <img class="rounded-full h-40 w-40" src="{{ config.extra.404.image }}" alt="">
+  <img class="h-60 w-60" src="{{ config.extra.404.image }}" alt="">
 </div>
 
 <!-- Content -->
-<div class="text-bold mt-2">
+<div class="flex justify-center text-xl text-bold mt-4">
   It seems that the content you're looking for was not found ...
 </div>
 {% endblock content %}
