@@ -24,5 +24,5 @@ html {
     @apply py-4;
 }
 #page-content pre {
-    @apply py-2 my-4;
+    @apply py-2 my-4 overflow-x-auto;
 }
