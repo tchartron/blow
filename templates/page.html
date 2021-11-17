@@ -101,12 +101,11 @@
 
 
   </div>
-  <div class="hidden sm:block sm:w-1/4">
 
 
     <!-- Table of content -->
     {% if page.extra.toc %}
-    <div class="flex items-center flex-col md:mt-10 w-1/5">
+    <div class="hidden sm:block sm:w-1/4 sm:flex sm:items-center sm:flex-col sm:mt-10 sm:w-1/5">
       <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800 sticky top-12">
         <p class="text-bold text-xl">Table of contents</p>
         <ul id="toc">
@@ -132,7 +131,6 @@
     {% endif %}
 
 
-  </div>
 </div>
 {% endblock %}
 
