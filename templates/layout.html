@@ -289,7 +289,7 @@
     <script defer src="/js/lang.js"></script>
   {% endif %}
   {% if config.extra.zt.enable_adsense %}
-    <script async src="{{config.extra.zt.adsense_link}}"
+    <script async src="{{ config.extra.zt.adsense_link | safe }}"
      crossorigin="anonymous"></script>
   {% endif %}
   {% block extra_js %}

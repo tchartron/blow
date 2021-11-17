@@ -15,7 +15,7 @@ echo -e "\033[0;32mDeploying updates to GitHub pages repository\033[0m\n"
 # Build the project to another directory because zola will delete the submodule /public otherwise
 zola build --output-dir public_zola
 #Now copy built files to public directory
-cp -a public_zola/* public/
+cp -a public_zola/ public/
 rm -rf public_zola
 
 echo -e "\033[0;32mCommit change to main repository\033[0m\n"
