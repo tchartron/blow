@@ -4,10 +4,10 @@
 
 @layer base {
   h1 {
-    @apply text-2xl;
+    @apply text-2xl underline;
   }
   h2 {
-    @apply text-xl;
+    @apply text-xl underline;
   }
 }
 
@@ -18,7 +18,7 @@ html {
 
 /* Default Pages content styles */
 #page-content a {
-    text-decoration: underline;
+    @apply underline;
 }
 #page-content p, h2 {
     @apply py-4;
