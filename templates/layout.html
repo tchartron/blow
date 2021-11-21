@@ -3,6 +3,30 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- FAVICON -->
+      {% if config.extra.favicon.webmanifest %}
+      <link href="{{ config.extra.favicon.manifest }}"" rel="manifest" />
+      {% endif %}
+      {% if config.extra.favicon.favicon_16x16 %}
+      <link href='{{ config.extra.favicon.favicon_16x16 }}' rel="icon" sizes="16x16" type="image/png" />
+      {% endif %}
+      {% if config.extra.favicon.favicon_32x32 %}
+      <link href='{{ config.extra.favicon.favicon_32x32 }}' rel="icon" sizes="32x32" type="image/png" />
+      {% endif %}
+      {% if config.extra.favicon.android_chrome_512 %}
+      <link href='{{ config.extra.favicon.android_chrome_512 }}' rel="android-chrome" sizes="512x512" />
+      {% endif %}
+      {% if config.extra.favicon.android_chrome_192 %}
+      <link href='{{ config.extra.favicon.android_chrome_192 }}' rel="android-chrome" sizes="192x192" />
+      {% endif %}
+      {% if config.extra.favicon.apple_touch_icon %}
+      <link href='{{ config.extra.favicon.apple_touch_icon }}' rel="apple-touch-icon" sizes="180x180" />
+      {% endif %}
+      {% if config.extra.favicon.apple_touch_icon %}
+      <link href='{{ config.extra.favicon.apple_touch_icon }}' rel="apple-touch-icon" sizes="180x180" />
+      {% endif %}
+
       <link href="/css/main.css" rel="stylesheet">
 
       <title>
