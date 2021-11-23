@@ -1,6 +1,8 @@
 # Zola theme built with tailwindcss
 zola-tailwind is a [Zola](https://www.getzola.org/) theme built with tailwindcss
 
+(WIP) Example : [Here](https://tchartron.com)
+
 ## Features
 - [X] Dark mode
 - [X] Customizable navbar links
@@ -18,4 +20,4 @@ zola-tailwind is a [Zola](https://www.getzola.org/) theme built with tailwindcss
 - [X] Mobile responsive
 - [X] Favicon
 - [ ] Code highlighting
-- [ ] Adsense ads
+- [ ] Adsense
