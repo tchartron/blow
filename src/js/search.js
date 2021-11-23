@@ -92,7 +92,7 @@ function toggleSearchModal () {
 
 function formatResultItem(search_result) {
   console.log(search_result)
-  let formatted_result = `<li class="flex flex-col gap-y-2 hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-gray-200 p-2 rounded-lg">
+  let formatted_result = `<li class="flex hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-gray-200 p-2 rounded-lg border border-black dark:border-gray-200 bg-gray-200 dark:bg-gray-500 rounded-lg hover:shadow-xl">
   <a href="${search_result.doc.path}">
   <span class="text-xl text-bold">${search_result.doc.title}</span>
   <span class="text-lg">${search_result.doc.description}</span>
