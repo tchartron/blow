@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let navbar_links = document.querySelectorAll('.nav-links a');
   let current_location = window.location.href;
   let selected_navbar_link = [...navbar_links].filter((item) => {
-    return (item.href === current_location)
+    return (item.href === (current_location || `${current_location}/`))
   })
   if (typeof selected_navbar_link !== 'undefined') {
     if (Array.isArray(selected_navbar_link)) {
