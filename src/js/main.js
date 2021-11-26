@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let navbar_links = document.querySelectorAll('.nav-links a');
   let trim_last_slash = window.location.href.replace(/\/$/, '');
   let selected_navbar_link = [...navbar_links].filter((item) => {
-    return (item.href === trim_last_slash)
+    return (item.href === (trim_last_slash || window.location.href))
   })
   if (selected_navbar_link.length !== 0) {
     for (let element of selected_navbar_link) {
