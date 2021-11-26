@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(trim_last_slash)
   let selected_navbar_link = [...navbar_links].filter((item) => {
     console.log(item.href)
-    return (item.href === (trim_last_slash || window.location.href))
+    return ((item.href === trim_last_slash) || (item.href === window.location.href))
   })
   if (selected_navbar_link.length !== 0) {
     for (let element of selected_navbar_link) {
