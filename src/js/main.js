@@ -2,10 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // ---------------- Selected Navbar Link -------------------------
   let navbar_links = document.querySelectorAll('.nav-links a');
   let trim_last_slash = window.location.href.replace(/\/$/, '');
-  console.log(window.location.href)
-  console.log(trim_last_slash)
   let selected_navbar_link = [...navbar_links].filter((item) => {
-    console.log(item.href)
     return ((item.href === trim_last_slash) || (item.href === window.location.href))
   })
   if (selected_navbar_link.length !== 0) {
