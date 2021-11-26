@@ -3,6 +3,5 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function switchLang(event) {
-    console.log(event)
     document.getElementById('switch-lang-panel').classList.toggle('hidden')
 }
