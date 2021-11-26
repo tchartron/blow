@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
   // ---------------- Selected Navbar Link -------------------------
   let navbar_links = document.querySelectorAll('.nav-links a');
-  let current_location = window.location.href;
-  let selected_navbar_link = [...navbar_links].find((item) => {
-    return (current_location.indexOf(item.href) !== -1)
+  let trim_last_slash = window.location.href.replace(/\/$/, '');
+  let selected_navbar_link = [...navbar_links].filter((item) => {
+    return (item.href === trim_last_slash)
   })
-  if (typeof selected_navbar_link !== 'undefined') {
-    if (Array.isArray(selected_navbar_link)) {
-      for (let element of selected_navbar_link) {
-        element.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-      }
-    } else {
-      selected_navbar_link.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+  if (selected_navbar_link.length !== 0) {
+    for (let element of selected_navbar_link) {
+      element.className = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
     }
   }
 
