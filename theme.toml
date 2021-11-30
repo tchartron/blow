@@ -1,11 +1,11 @@
-name = "Zola Tailwind"
-description = "A Zola theme using Tailwindcss"
+name = "Blow"
+description = "A Zola theme made with Tailwindcss"
 license = "MIT"
-homepage = "https://github.com/tchartron/zola-tailwind"
+homepage = "https://github.com/tchartron/blow"
 # The minimum version of Zola required
 min_version = "0.9.0"
 # An optional live demo URL
-demo = ""
+demo = "https://tchartron.com"
 
 # The theme author info: you!
 [author]
