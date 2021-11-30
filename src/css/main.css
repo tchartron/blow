@@ -4,10 +4,10 @@
 
 @layer base {
   h1 {
-    @apply text-2xl underline;
+    @apply text-2xl;
   }
   h2 {
-    @apply text-xl underline;
+    @apply text-xl;
   }
 }
 
