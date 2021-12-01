@@ -3,6 +3,9 @@ A [Zola](https://www.getzola.org/) theme built with [tailwindcss](https://tailwi
 
 (WIP) Example : [Here](https://tchartron.com)  
 
+## Preview
+![preview](screenshot.png)
+
 ## Usage
 You should follow the [official documentation](https://www.getzola.org/documentation/themes/installing-and-using-themes/) about installing a Zola theme.  
 
@@ -93,3 +96,21 @@ manifest = "/icons/site.webmanifest"
 ```
 
 You can now run `zola serve` and visit : `http://127.0.0.1:1111/` to see your site
+
+## Features
+- [X] Dark mode
+- [X] Customizable navbar links
+- [X] Tags and Categories taxonomies
+- [X] Search functionality supporting Command + K shortcut
+- [X] Social links (github, gitlab, twitter, linkedin, email) 
+- [X] Postcss build process with cssnano (and tailwindcss tree shaking to reduce final bundle size)
+- [X] Uglifyjs build process with minification
+- [X] Example script to deploy to Github Pages
+- [X] Pagination
+- [X] Sidemenu menu with sections links
+- [X] Table of content (2 levels and currently viewed part highlighted)
+- [X] Multilingue
+- [X] 404
+- [X] Mobile responsive
+- [X] Favicon
+- [ ] Adsense
