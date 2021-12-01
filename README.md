@@ -114,3 +114,6 @@ You can now run `zola serve` and visit : `http://127.0.0.1:1111/` to see your si
 - [X] Mobile responsive
 - [X] Favicon
 - [ ] Adsense
+
+## Deployment
+There is a section about deployment in Zola [documentation](https://www.getzola.org/documentation/deployment/overview/) but you'll find an [example](https://github.com/tchartron/blow/blob/main/deploy-github.sh) to deploy your site to github pages
