@@ -1,9 +1,10 @@
+@import url("syntax-dark.css") (prefers-color-scheme: dark);
+@import url("syntax-light.css") (prefers-color-scheme: light);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("syntax-dark.css") (prefers-color-scheme: dark);
-@import url("syntax-light.css") (prefers-color-scheme: light);
 
 @layer base {
   h1 {
