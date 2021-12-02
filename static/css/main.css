@@ -1,4 +1,4 @@
-@import url("syntax-dark.css") (prefers-color-scheme: dark);@import url("syntax-light.css") (prefers-color-scheme: light);
+@import url("/syntax-dark.css") (prefers-color-scheme: dark);@import url("/syntax-light.css") (prefers-color-scheme: light);
 
 /*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com*/
 
