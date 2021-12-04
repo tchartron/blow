@@ -1,9 +1,9 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://github.com/tchartron/zola-tailwind"
+base_url = "https://github.com/tchartron/blow"
 
 # The site title and description; used in feeds by default.
-title = "Zola Tailwind"
-description = "A Zola theme using Tailwindcss"
+title = "Blow"
+description = "A Zola theme using tailwindcss"
 
 # The default language; used in feeds.
 default_language = "en"
@@ -142,8 +142,8 @@ truncate_content_length = 100
 [languages]
 # For example
 [languages.fr]
-title = "Zola Tailwind"
-description = "Un thème pour Zola utilisant Tailwindcss"
+title = "Blow"
+description = "Un thème pour Zola avec tailwindcss"
 generate_feed = false
 taxonomies = [
     {name = "tags", paginate_by = 5, feed = true},
