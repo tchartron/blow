@@ -100,7 +100,7 @@ You can now run `zola serve` and visit : `http://127.0.0.1:1111/` to see your si
 ## Syntax Highlighting
 Blow makes use of Zola code highlighting feature.  
 It supports setting a different color scheme depending on the user selected theme (Dark / Light)  
-In order to use it you should select the color scheme you want to use for light and dark theme and edit your `config.toml` file like this example :  
+In order to use it you should select the color scheme you want to use for light and dark themes in the list provided [here](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting) and edit your `config.toml` file like this example :  
 ```toml
 highlight_theme = "css"
 
