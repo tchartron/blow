@@ -16,9 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
     document.getElementById('dark').classList.add('hidden');
+    document.getElementById("syntax_highlight").href = "/syntax-dark.css";
   } else {
     document.documentElement.classList.remove('dark')
     document.getElementById('light').classList.add('hidden');
+    document.getElementById("syntax_highlight").href = "/syntax-light.css";
   }
   // Switch theme action
   document.getElementById('switch-theme').addEventListener('click', switchTheme);
