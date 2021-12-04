@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
-  let css_node = document.createElement("link");
-  css_node.rel = "stylesheet";
+  let css_node = document.getElementById("syntax_highlight");
   // ---------------- Switch Theme -------------------------
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -27,8 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   // Switch theme action
   document.getElementById('switch-theme').addEventListener('click', switchTheme);
-  //Load custom code highlight css depending on theme
-  document.head.appendChild(css_node);
+
   // ---------------- Toggle Sidebar -------------------------
   document.getElementById('toggle-sidebar').addEventListener('click', toggleSidebar);
 
