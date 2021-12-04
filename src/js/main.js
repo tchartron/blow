@@ -11,18 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-
-  let css_node = document.getElementById("syntax_highlight");
   // ---------------- Switch Theme -------------------------
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
     document.getElementById('dark').classList.add('hidden');
-    css_node.href = "/syntax-dark.css";
+    document.getElementById("syntax_highlight").href = "/syntax-dark.css";
   } else {
     document.documentElement.classList.remove('dark')
     document.getElementById('light').classList.add('hidden');
-    css_node.href = "/syntax-light.css";
+    document.getElementById("syntax_highlight").href = "/syntax-light.css";
   }
   // Switch theme action
   document.getElementById('switch-theme').addEventListener('click', switchTheme);
