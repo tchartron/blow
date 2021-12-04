@@ -11,18 +11,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+
+  let css_node = document.createElement("link");
   // ---------------- Switch Theme -------------------------
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
     document.getElementById('dark').classList.add('hidden');
+    css_node.href = "/syntax-dark.css";
+    css_node.rel = "stylesheet";
   } else {
     document.documentElement.classList.remove('dark')
     document.getElementById('light').classList.add('hidden');
+    css_node.href = "/syntax-dark.css";
+    css_node.rel = "stylesheet";
   }
   // Switch theme action
   document.getElementById('switch-theme').addEventListener('click', switchTheme);
-
+  //Load custom code highlight css depending on theme
+  document.head.appendChild(css_node);
   // ---------------- Toggle Sidebar -------------------------
   document.getElementById('toggle-sidebar').addEventListener('click', toggleSidebar);
 
