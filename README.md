@@ -16,13 +16,13 @@ git submodule add -b main git@github.com:tchartron/blow.git themes/blow
 ```
 
 Edit the theme used in your `config.toml` file
-```bash
+```toml
 # The site theme to use.
 theme = "blow"
 ```
 
 Then edit your `config.toml` file to override values from the theme :
-```bash
+```toml
 [extra]
 zt.enable_search = true
 zt.enable_sidebar = true
@@ -96,6 +96,19 @@ manifest = "/icons/site.webmanifest"
 ```
 
 You can now run `zola serve` and visit : `http://127.0.0.1:1111/` to see your site
+
+## Syntax Highlighting
+Blow makes use of Zola code highlighting feature.  
+It supports setting a different color scheme depending on the user selected theme (Dark / Light)  
+In order to use it you should select the color scheme you want to use for light and dark theme and edit your `config.toml` file like this example :  
+```toml
+highlight_theme = "css"
+
+highlight_themes_css = [
+  { theme = "ayu-dark", filename = "syntax-dark.css" },
+  { theme = "ayu-light", filename = "syntax-light.css" },
+]
+```
 
 ## Features
 - [X] Dark/Light modes (with syntax highlighting depending on selected theme)
