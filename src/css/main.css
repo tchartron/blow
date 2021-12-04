@@ -24,7 +24,7 @@ html {
 #page-content p, h2 {
     @apply py-4;
 }
-#page-content :is(p, h1, h2, h3, h4, h5, h6) {
+#page-content :is(h1, h2, h3, h4, h5, h6) {
     @apply underline;
 }
 #page-content pre {
