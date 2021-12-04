@@ -3,7 +3,7 @@ base_url = "https://github.com/tchartron/blow"
 
 # The site title and description; used in feeds by default.
 title = "Blow"
-description = "A Zola theme using tailwindcss"
+description = "A Zola theme made with tailwindcss"
 
 # The default language; used in feeds.
 default_language = "en"
@@ -143,7 +143,7 @@ truncate_content_length = 100
 # For example
 [languages.fr]
 title = "Blow"
-description = "Un thème pour Zola avec tailwindcss"
+description = "Un thème pour Zola fait avec tailwindcss"
 generate_feed = false
 taxonomies = [
     {name = "tags", paginate_by = 5, feed = true},

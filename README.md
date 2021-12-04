@@ -98,7 +98,7 @@ manifest = "/icons/site.webmanifest"
 You can now run `zola serve` and visit : `http://127.0.0.1:1111/` to see your site
 
 ## Features
-- [X] Dark mode
+- [X] Dark/Light modes (with syntax highlighting depending on selected theme)
 - [X] Customizable navbar links
 - [X] Tags and Categories taxonomies
 - [X] Search functionality supporting Command + K shortcut
