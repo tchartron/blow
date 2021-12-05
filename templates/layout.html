@@ -82,7 +82,7 @@
                 {% endif %}
               {% endfor %}
 
-              {% if config.extra.zt.enable_sidebar %}
+              {% if config.extra.enable_sidebar %}
               <!-- More ... Button (sidebar) -->
               <button id="toggle-sidebar">
                 <svg class="w-7 h-7 text-gray-800 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +93,7 @@
             </div>
           </div>
 
-          {% if config.extra.zt.enable_search %}
+          {% if config.extra.enable_search %}
           <!-- Search input in navbar -->
           <div class="flex ml-auto relative items-center sm:mr-4">
             <input id="search" class="rounded-xl border border-black dark:border-gray-200 h-9 text-black dark:text-gray-200 dark:bg-gray-700 w-24 sm:w-full" type="text">
@@ -152,7 +152,7 @@
         {% endif %}
 
         <!---------------------------- Sidebar Menu ---------------------------->
-        {% if config.extra.zt.enable_sidebar %}
+        {% if config.extra.enable_sidebar %}
           <div id="sidebar" class="nav-links -translate-x-full flex flex-col pt-6 p-2 text-2xl text-black dark:text-gray-200 bg-gray-200 dark:bg-gray-900 transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 shadow-2xl">
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.lang %}
@@ -164,7 +164,7 @@
           </div>
         {% endif %}
 
-        {% if config.extra.zt.enable_multilingue %}
+        {% if config.extra.enable_multilingue %}
           <!-- Language change button -->
           <div class="flex p-2 ml-4 relative">
             <button id="switch-lang" type="button" class="bg-gray-200 text-gray-800 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -240,7 +240,7 @@
           {% endif %}
         {% endfor %}
 
-        {% if config.extra.zt.enable_sidebar %}
+        {% if config.extra.enable_sidebar %}
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.lang %}
                 {% for link in item.links %}
@@ -305,16 +305,16 @@
 
   <!------------------------- SCRIPTS ------------------------->
   <script defer src="/js/main.js"></script>
-  {% if config.extra.zt.enable_search %}
+  {% if config.extra.enable_search %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
     <script src="/search_index.{{lang}}.js"></script>
     <script defer src="/js/search.js"></script>
   {% endif %}
-  {% if config.extra.zt.enable_multilingue %}
+  {% if config.extra.enable_multilingue %}
     <script defer src="/js/lang.js"></script>
   {% endif %}
-  {% if config.extra.zt.enable_adsense %}
-    <script async src="{{ config.extra.zt.adsense_link | safe }}"
+  {% if config.extra.enable_adsense %}
+    <script async src="{{ config.extra.adsense_link | safe }}"
      crossorigin="anonymous"></script>
   {% endif %}
   {% block extra_js %}

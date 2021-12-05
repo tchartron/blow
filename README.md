@@ -24,11 +24,11 @@ theme = "blow"
 Then edit your `config.toml` file to override values from the theme :
 ```toml
 [extra]
-zt.enable_search = true
-zt.enable_sidebar = true
-zt.enable_adsense = true
-zt.enable_multilingue = true
-zt.adsense_link = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=myclientid"
+enable_search = true
+enable_sidebar = true
+enable_adsense = true
+enable_multilingue = true
+adsense_link = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=myclientid"
 
 [extra.lang]
 items = [
