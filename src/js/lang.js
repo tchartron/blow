@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('switch-lang').addEventListener('click', switchLang);
+    document.getElementById('switch-lang')?.addEventListener('click', switchLang);
 })
 
 function switchLang(event) {
