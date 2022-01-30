@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("syntax_highlight").href = "/syntax-light.css";
   }
   // Switch theme action
-  document.getElementById('switch-theme').addEventListener('click', switchTheme);
+  document.getElementById('switch-theme')?.addEventListener('click', switchTheme);
 
   // ---------------- Toggle Sidebar -------------------------
-  document.getElementById('toggle-sidebar').addEventListener('click', toggleSidebar);
+  document.getElementById('toggle-sidebar')?.addEventListener('click', toggleSidebar);
 
   // ---------------- Toggle Mobile menu -------------------------
-  document.getElementById('toggle-mobile-menu').addEventListener('click', toggleMobileMenu);
+  document.getElementById('toggle-mobile-menu')?.addEventListener('click', toggleMobileMenu);
 });
 
 function switchTheme() {
