@@ -73,10 +73,12 @@ items = [
 [extra.index]
 title = "Main title"
 image = "https://via.placeholder.com/200"
+image_alt = "Placeholder text describing the index's image."
 
 [extra.default_author]
 name = "John Doe"
 avatar = "https://via.placeholder.com/200"
+avatar_alt = "Placeholder text describing the default author's avatar."
 
 [extra.social]
 github = "https://github.com/johndoe"

@@ -49,11 +49,11 @@
           {% if page.extra.author.name %}
             <span class="ml-1">{{ page.extra.author.name }}</span>
             {% if page.extra.author.avatar %}
-              <img class="rounded-full h-9 w-9 ml-1" src="{{ page.extra.author.avatar }}">
+              <img class="rounded-full h-9 w-9 ml-1" src="{{ page.extra.author.avatar }}"{% if page.extra.author.avatar_alt %} alt="{{ page.extra.author.avatar_alt }}"{% endif %}>
             {% endif %}
           {% else %}
             <span class="ml-1">{{ config.extra.default_author.name }}</span>
-            <img class="rounded-full h-9 w-9 ml-1" src="{{ config.extra.default_author.avatar }}">
+            <img class="rounded-full h-9 w-9 ml-1" src="{{ config.extra.default_author.avatar }}" alt="{{ config.extra.default_author.avatar_alt }}">
           {% endif %}
         </span>
       </div>
