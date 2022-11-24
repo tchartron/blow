@@ -8,9 +8,6 @@ description = "A Zola theme made with tailwindcss"
 # The default language; used in feeds.
 default_language = "en"
 
-# The site theme to use.
-theme = ""
-
 # For overriding the default output directory `public`, set it to another value (e.g.: "docs")
 output_dir = "public"
 
@@ -160,3 +157,25 @@ taxonomies = [
 # author value will be available using {{ config.extra.author }} in templates
 #
 [extra]
+
+
+[extra.navbar]
+items = [
+    { lang = "en", links = [
+        { url = "/", name = "Home" },
+        { url = "/categories", name = "Categories" },
+        { url = "/tags", name = "Tags" },
+    ] },
+]
+title = "title"
+
+
+[extra.index]
+title = "Main title"
+image = "https://via.placeholder.com/200"
+image_alt = "Placeholder text describing the index's image."
+
+[extra.default_author]
+name = "John Doe"
+avatar = "https://via.placeholder.com/200"
+avatar_alt = "Placeholder text describing the default author's avatar."
