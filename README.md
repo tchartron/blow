@@ -85,6 +85,8 @@ github = "https://github.com/johndoe"
 gitlab = "https://gitlab.com/johndoe"
 twitter = "https://twitter.com/johndoe"
 linkedin = "https://www.linkedin.com/in/john-doe-b1234567/"
+stackoverflow = "https://stackoverflow.com/users/01234567/johndoe" 
+telegram = "https://t.me/johndoe"
 email = "john.doe@gmail.com"
 
 [extra.favicon]
