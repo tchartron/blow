@@ -77,7 +77,7 @@
               {% for item in config.extra.navbar.items %}
                 {% if lang == item.lang %}
                   {% for link in item.links %}
-                    <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+                <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
                   {% endfor %}
                 {% endif %}
               {% endfor %}
@@ -157,7 +157,7 @@
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.lang %}
                 {% for link in item.links %}
-                  <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+              <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
                 {% endfor %}
               {% endif %}
             {% endfor %}
@@ -177,7 +177,7 @@
               {% for item in config.extra.lang.items %}
                 {% if lang == item.lang %}
                   {% for link in item.links %}
-                    <a class="flex justify-center py-2 hover:text-gray-800 dark:hover:text-white" href="{{ link.base_url }}">{{ link.name }}</a>
+                <a class="flex justify-center py-2 hover:text-gray-800 dark:hover:text-white" href="{{ config.base_url | safe }}/{{ link.base_url }}">{{ link.name }}</a>
                   {% endfor %}
                 {% endif %}
               {% endfor %}
@@ -235,7 +235,7 @@
         {% for item in config.extra.navbar.items %}
           {% if lang == item.lang %}
             {% for link in item.links %}
-              <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+              <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
             {% endfor %}
           {% endif %}
         {% endfor %}
@@ -244,7 +244,7 @@
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.lang %}
                 {% for link in item.links %}
-                  <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+                  <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
                 {% endfor %}
               {% endif %}
             {% endfor %}
