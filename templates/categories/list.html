@@ -3,18 +3,20 @@
 {% block content %}
 <div class="flex items-center flex-col mt-10">
   <h1 class="text-2xl text-bold">
-    Categories
+    分类
   </h1>
-  <p class="text-bold text-xl mt-4">{{ terms | length }} categories</p>
+  <p class="text-bold text-xl mt-4">{{ terms | length }} 类别</p>
 
   <div class="flex sm:flex-row flex-col sm:gap-x-7 gap-y-5 mt-6">
-  {% for category in terms %}
+    {% for category in terms %}
     <a href="{{ category.permalink | safe }}" class="flex items-center space-x-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+        </path>
       </svg>
       <span class="text-bold">{{category.name}} <sup>{{ category.pages | length }}</sup></span>
     </a>
-  {% endfor %}
+    {% endfor %}
   </div>
-{% endblock content %}
+  {% endblock content %}
