@@ -35,6 +35,6 @@ html {
 }
 
 #page-content ul li {
-  list-style-position: 'inside';
+  list-style-position: inside;
   list-style-type: '✒';
 }
