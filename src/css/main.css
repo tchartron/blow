@@ -30,3 +30,6 @@ html {
 #page-content pre {
     @apply p-4 my-4 overflow-x-auto;
 }
+#page-content code {
+   @apply text-teal-400 px-px mx-1;
+}
