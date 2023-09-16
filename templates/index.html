@@ -7,6 +7,13 @@
   </h1>
   <img class="rounded-full h-40 w-40" src="{{ config.extra.index.image }}" alt="{{ config.extra.index.image_alt }}">
   <div class="flex flex-wrap space-x-4 mt-7">
+    {% if config.extra.social.codeberg %}
+      <a href="{{config.extra.social.codeberg}}" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-black dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12 12 12 0 0 0-.045 0zm.375 6.467 4.416 16.553a12 12 0 0 0 5.137-4.213z"></path>
+        </svg>
+      </a>
+    {% endif %}
     {% if config.extra.social.github %}
       <a href="{{config.extra.social.github}}" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-black dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">

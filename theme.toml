@@ -81,6 +81,7 @@ avatar = "https://via.placeholder.com/200"
 avatar_alt = "Placeholder text describing the default author's avatar."
 
 [extra.social]
+codeberg = "https://codeberg.org/johndoe"
 github = "https://github.com/johndoe"
 gitlab = "https://gitlab.com/johndoe"
 twitter = "https://twitter.com/johndoe"
