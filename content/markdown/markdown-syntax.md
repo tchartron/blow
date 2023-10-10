@@ -4,6 +4,8 @@ date = 2021-11-12
 [taxonomies]
 categories=["markdown"]
 tags=["markdown", "syntax", "guide"]
+[extra]
+toc = true
 +++
 
 Let's face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
@@ -45,6 +47,10 @@ The HTML looks like this:
 <h5>h5 Heading</h5>
 <h6>h6 Heading</h6>
 ```
+
+## Heading Levels
+
+### Heading Subtitle
 
 # Comments
 
