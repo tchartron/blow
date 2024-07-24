@@ -27,7 +27,8 @@
       <link href='{{ config.extra.favicon.apple_touch_icon }}' rel="apple-touch-icon" sizes="180x180" />
       {% endif %}
 
-      <link href="/css/main.css" rel="stylesheet">
+      <link href="{{ config.base_url | safe }}/css/main.css" rel="stylesheet">
+      <link href="{{ config.base_url | safe }}/style.css" rel="stylesheet">
       <link id="syntax_highlight" href="#" rel="stylesheet">
 
       <title>
@@ -67,7 +68,7 @@
         </div>
         <div class="flex-1 flex items-center">
           <div class="flex-shrink-0 flex items-center ml-2">
-            <a href="/" class="text-xl text-gray-800 dark:text-white">{{config.extra.navbar.title}}</a>
+              <a href="{{ config.base_url }}" class="text-xl text-gray-800 dark:text-white">{{config.extra.navbar.title}}</a>
             <!-- <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
             <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow"> -->
           </div>
@@ -77,7 +78,7 @@
               {% for item in config.extra.navbar.items %}
                 {% if lang == item.lang %}
                   {% for link in item.links %}
-                    <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+                <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
                   {% endfor %}
                 {% endif %}
               {% endfor %}
@@ -157,7 +158,7 @@
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.lang %}
                 {% for link in item.links %}
-                  <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+              <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
                 {% endfor %}
               {% endif %}
             {% endfor %}
@@ -177,7 +178,7 @@
               {% for item in config.extra.lang.items %}
                 {% if lang == item.lang %}
                   {% for link in item.links %}
-                    <a class="flex justify-center py-2 hover:text-gray-800 dark:hover:text-white" href="{{ link.base_url }}">{{ link.name }}</a>
+                <a class="flex justify-center py-2 hover:text-gray-800 dark:hover:text-white" href="{{ config.base_url | safe }}/{{ link.base_url }}">{{ link.name }}</a>
                   {% endfor %}
                 {% endif %}
               {% endfor %}
@@ -235,7 +236,7 @@
         {% for item in config.extra.navbar.items %}
           {% if lang == item.lang %}
             {% for link in item.links %}
-              <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+              <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
             {% endfor %}
           {% endif %}
         {% endfor %}
@@ -244,7 +245,7 @@
             {% for item in config.extra.sidebar.items %}
               {% if lang == item.lang %}
                 {% for link in item.links %}
-                  <a href="{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
+                  <a href="{{ config.base_url | safe }}/{{ link.url }}" class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ link.name }}</a>
                 {% endfor %}
               {% endif %}
             {% endfor %}
@@ -304,14 +305,14 @@
   </footer>
 
   <!------------------------- SCRIPTS ------------------------->
-  <script defer src="/js/main.js"></script>
+    <script defer src="{{ config.base_url | safe }}/js/main.js"></script>
   {% if config.extra.enable_search %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
-    <script src="/search_index.{{lang}}.js"></script>
-    <script defer src="/js/search.js"></script>
+    <script src="{{ config.base_url | safe }}/search_index.{{lang}}.js"></script>
+    <script defer src="{{ config.base_url | safe }}/js/search.js"></script>
   {% endif %}
   {% if config.extra.enable_multilingue %}
-    <script defer src="/js/lang.js"></script>
+    <script defer src="{{config.base_url | safe}}/js/lang.js"></script>
   {% endif %}
   {% if config.extra.enable_adsense %}
     <script async src="{{ config.extra.adsense_link | safe }}"
