@@ -230,7 +230,7 @@
 
     <!----------------------------- Mobile menu ----------------------------->
     <div id="mobile-menu" class="sm:hidden fixed z-10 overflow-hidden">
-      <div class="nav-links flex flex-col space-y-4 items-center w-screen dark:bg-gray-800 transition-all ease-out duration-500 h-0">
+      <div class="nav-links flex flex-col space-y-4 items-center w-screen bg-gray-200 dark:bg-gray-800 transition-all ease-out duration-500 h-0">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         {% for item in config.extra.navbar.items %}
           {% if lang == item.lang %}
