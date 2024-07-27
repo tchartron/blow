@@ -7,7 +7,7 @@
   </h1>
   <p class="text-bold text-xl mt-4">{{ terms | length }} tags</p>
 
-  <div class="flex sm:flex-row flex-col sm:gap-x-7 gap-y-5 mt-6">
+  <div class="flex flex-wrap sm:flex-row flex-col sm:gap-x-7 gap-y-5 mt-6">
   {% for tag in terms %}
     <a href="{{ tag.permalink | safe }}" class="flex items-center space-x-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
