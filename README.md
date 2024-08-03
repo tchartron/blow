@@ -116,6 +116,17 @@ highlight_themes_css = [
 ]
 ```
 
+## Custom Footer Content
+To overwrite the default footer (copyright notice), extend the `layout.html` template of the theme as described in the [Zola documentation](https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block) by creating a `layout.html` with the following content in your `templates` directory:
+
+```jinja
+{% extends "blow/templates/layout.html" %}
+
+{% block content_footer %}
+Here is my own footer with a <a href="http://example.com">link</a>.
+{% endblock %}
+```
+
 ## Features
 - [X] Dark/Light modes (with syntax highlighting depending on selected theme)
 - [X] Customizable navbar links
