@@ -27,11 +27,11 @@
   },
   "homepage": "https://github.com/tchartron/zola-tailwind#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "cssnano": "^5.0.9",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^9.0.2",
-    "tailwindcss": "^2.2.19",
-    "uglify-js": "^3.14.3"
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.13",
+    "uglify-js": "^3.19.3"
   }
 }
