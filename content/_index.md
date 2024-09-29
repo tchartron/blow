@@ -1,7 +1,6 @@
 +++
 title = "Website title"
-description = "Personnal blog"
-date = 2021-11-12
+description = "Personal Blog"
 +++
 
 Main page content
